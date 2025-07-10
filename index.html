@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio of Nam Eo Jin</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./images/emblem.png">
+
+    <!-- CSS -->
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="./datas/moduleSet.js" type="module"></script>
+    <script src="./scripts.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+</head>
+<body>
+  <div id="selectLanguage">
+    <!-- 첫 화면 언어 선택 -->
+    <div>
+      <a href="javascript:chooseLanguageFirst('kor')">
+        <img src="./images/Flag_of_South_Korea.png" class="flagFirst" alt="koreanFlag"/>
+        <span>한국어</span>
+      </a>
+      
+      <a href="javascript:chooseLanguageFirst('eng')">
+        <img src="./images/Flag_of_US&UK.png" class="flagFirst" alt="englishFlag"/>
+        <span>English</span>
+      </a>
+      
+      <a href="javascript:chooseLanguageFirst('jpn')">
+        <img src="./images/Flag_of_Japan.png" class="flagFirst" alt="japaneseFlag"/>
+        <span>日本語</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 헤더 -->
+  <header>
+    <ul class="headerButton">
+      <li>Introduction</li>
+      <li>About</li>
+      <li>Work & Experiences</li>
+      <li>Contact</li>
+    </ul>
+
+    <img src="./images/logoB.png" alt="logoHeader">
+
+    <ul class="headerLanguage">
+      <li>
+        <a href="javascript:changeLanguage('kor')">
+          <img src="./images/Flag_of_South_Korea.png" alt="koreanFlag"/>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:changeLanguage('eng')">
+          <img src="./images/Flag_of_US&UK.png" alt="englishFlag"/>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:changeLanguage('jpn')">
+          <img src="./images/Flag_of_Japan.png" alt="japaneseFlag"/>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <ul class="headerSub">
+    <li>Introduction</li>
+    <li>About</li>
+    <li>Work & Experiences</li>
+    <li>Contact</li>
+  </ul>
+
+  <!-- 첫 화면 -->
+  <div id="introduction">
+    <div class='greething'>
+      <ul class="introSlide">
+        <li></li>
+      </ul>
+      <p class="kor">
+        최고의 Web Publisher, Wep Engineer를 꿈꾸는 남어진의 Portfolio입니다!
+      </p>
+      <p class="eng">
+        This`s Portfolio of Nam, Dreaming the best Web Publisher & Wep Engineer!
+      </p>
+      <p class="jpn">
+        最高のWebパブリッシャー、Webエンジニアを目指している<br>ナム・オジンのポートフォリオです!
+      </p>
+      <p><img src="./images/logoW.png" alt="logoFisrt"></p>
+    </div>
+  </div>
+  
+  <!-- 소개 -->
+  <div id="about">
+    <h2 class="kor">
+      저는 이런 사람입니다.
+    </h2>
+    <h2 class="eng">
+       This`s who I am.
+    </h2>
+    <h2 class="jpn">
+      私はこのような人です。
+    </h2>
+    <div class="mainImg">
+      <img  src="images/imageAbout.jpg" alt="mainImg">
+    </div>
+
+    <ul class="profile kor">
+      <li><span>이름</span>남어진(Jake)</li>
+      <li>
+        <span>국적</span>
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>출생일</span>1993년 6월</li>
+      <li>
+        <span>주소</span>
+        충청남도 아산시
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>취미</span>여행, 사진 찍기</li>
+    </ul>
+
+    <ul class="profile eng">
+      <li><span>NAME</span>Eo-jin Nam(Jake)</li>
+      <li>
+        <span>NATIONALITY</span>
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>BIRTHDAY</span>June 1993</li>
+      <li>
+        <span>ADDRESS</span>
+        Asan-si ChungNam
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>HOBBIES</span>Travel, Photography</li>
+    </ul>
+
+    <ul class="profile jpn">
+      <li><span>名前</span>ナム　オジン(Jake)</li>
+      <li>
+        <span>国籍</span>
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>生年月</span>平成5年 6月</li>
+      <li>
+        <span>住所</span>
+        忠淸南都 牙山市
+        <img src="./images/Flag_of_South_Korea.png" class="koreanFlag" alt="koreanFlag"/>
+      </li>
+      <li><span>趣味</span>旅行、写真撮り</li>
+    </ul>
+
+    <ul class="openPop">
+      <li class="kor">
+        <a href="javascript:openAboutPop('popVisited')">내가 다녀온 곳</a>
+        <a href="javascript:openAboutPop('popExperience')">내가 배우고 일한 곳</a>
+        <a href="javascript:openAboutPop('popSkills')">내가 배우고 경험한 것</a>
+        <a href="javascript:openAboutPop('popBackend')">나의 Backend Project</a>
+      </li>
+
+      <li class="eng">
+        <a href="javascript:openAboutPop('popVisited')">Visited Places</a>
+        <a href="javascript:openAboutPop('popExperience')">Scolarship & Experience</a>
+        <a href="javascript:openAboutPop('popSkills')">Programming Skills</a>
+        <a href="javascript:openAboutPop('popBackend')">Backend Project</a>
+      </li>
+
+      <li class="jpn">
+        <a href="javascript:openAboutPop('popVisited')">行って来た所</a>
+        <a href="javascript:openAboutPop('popExperience')">通った学校と職場</a>
+        <a href="javascript:openAboutPop('popSkills')">コンピュータースキル</a>
+        <a href="javascript:openAboutPop('popBackend')">Backend Projectの経験</a>
+      </li>
+    </ul>
+
+    <!-- 방문지 -->
+    <div class="popVisited">
+      <h2>
+        <span class="kor">내가 다녀온 곳</span>
+        <span class="eng">Visited Places</span>
+        <span class="jpn">行って来た所</span>
+        <span class="closePop">&times;</span>
+      </h2>
+
+      <div class="swiper visitSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <ul class="utah">
+              <p>
+                <span>Utah</span>
+                <img src="./images/Flag_of_the_United_States.png" alt="">
+              </p>
+            </ul>
+
+          </div>
+
+          <div class="swiper-slide">
+            <ul class="sydney">
+              <p>
+                Sydney
+                <img src="./images/Flag_of_Australia.png">
+              </p>
+            </ul>
+          </div>
+
+          <div class="swiper-slide">
+            <ul class="nagoya">
+              <p>
+                Nagoya
+                <img src="./images/Flag_of_Japan.png">
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+        <!-- ここに暮したことがあります。
+        Utah, US
+        Sydney, Australia
+        名古屋, 日本 -->
+    </div>
+
+    <!-- 학력, 경력 -->
+    <div class="popExperience">
+      <h2>
+        <span class="kor">학내가 배우고 일한 곳</span>
+        <span class="eng">Scolarship & Experiences</span>
+        <span class="jpn">学歴と経歴</span>
+        <span class="closePop">&times;</span>
+      </h2>
+
+      <ul>
+        <li>순천향대학교 생명시스템학과 2012. 2. ~ 2019. 8.</li>
+        <li>JSL 인재개발원 하이브리드 소프트웨어 전문가 과정 2022. 3. ~ 2022. 11.</li>
+        <li>MBC 아카데미컴퓨터 심화_AI Roboflow를 활용한 부유물탐지 시스템 구축과정 2024. 12. ~ 2025. 2.
+        <li>MBC 아카데미컴퓨터 현장수요에 맞는 디지털디자인 (웹디자인, 웹퍼블리셔) 전문가 양성 2025. 2. ~ 2025. 7.</li>
+      </ul>
+      <ul>
+        <li>SY systems co. inc. - 일본 나고야 - 2024. 5. ~ 2024. 11.</li>
+      </ul>
+      <ul>
+        <li>TOEIC 825</li>
+        <li>JPT 540</li>
+        <li>과정평가형정보처리산업기사</li>
+        <li>웹디자인기능사 (현, 웹디자인개발기능사)</li>
+        <li>컴퓨터그래픽기능사 (필기 합격)</li>
+      </ul>
+    </div>
+
+    <!-- 보유 기술 -->
+    <div class="popSkills">
+      <h2>
+        <span class="kor">배우고 경험한 기술</span>
+        <span class="eng">computer skills I`ve learned & experiences</span>
+        <span class="jpn">身につけて経験したスキル</span>
+        <span class="closePop">&times;</span>
+      </h2>
+      
+      <ul>
+        <li><div>
+          <img src="./images/logos/vsCode.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/notepadPlus.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/eclipse.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/googleColab.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/sakuraEditor.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/inteliJ.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/pyCharm.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/roboflow.png" alt="programmingTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/javascript.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/html.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/css.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/sass.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/jQuery.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/ajax.png" alt="frontend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/oracle.png" alt="database">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/mysql.png" alt="database">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/photoshop.png" alt="graphicTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/illustrator.png" alt="graphicTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/figma.png" alt="graphicTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/canva.png" alt="graphicTool">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/java.png" alt="backend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/nodejs.png" alt="backend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/python.png" alt="backend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/c.png" alt="backend">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/apacheTomcat.png" alt="server">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/spring.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/springBoot.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/react.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/reactBootstrap.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/axios.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/redux.png" alt="framework">
+        </div></li>
+        <li><div>
+          <img src="./images/logos/swiper.png" alt="framework">
+        </div></li>
+       </ul>
+    </div>
+
+    <!-- Backend 경험 -->
+    <div class="popBackend">
+      <h2>
+        <span class="kor">나의 Backend Project</span>
+        <span class="eng">Backend Project Experiences</span>
+        <span class="jpn">Backend Projectの経験</span>
+        <span class="closePop">&times;</span>
+      </h2>
+
+      <ul>
+        <li>학생용 포털 - html, css, javascript, jQuery</li>
+        <li>음악 스트리밍 사이트 - html, css, javascript, jQuery, Java/JSP, Oracle</li>
+        <li>상점 재고/매출 관리 시스템 - html, css, javascript, Java/JSP, MySQL</li>
+        <li>하천 부유물 탐지 시스템 - python, Roboflow, html, css, Java/JSP, SpringBoot</li>
+        <li>도로 차량 탐지 시스템 - python, Roboflow, html, css, Java/JSP, SpringBoot, Oracle</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <!-- Frontend & Web design 경험 -->
+  <div id="works">
+    <h2 class="kor">웹디자인/웹 퍼블리쉬 경험 & 경력</h2>
+    <h2 class="eng">Experiences of Web Design</h2>
+    <h2 class="jpn">ウェブデザイン/パブリッシャーの経験＆経歴</h2>
+
+    <div class="swiper worksSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="webpageFrame">
+            <img src="images/jakeanam.github.io_UIUXProject1-playeRC_.png" alt="webDesign1">
+          </div>
+          <a href="https://jakeanam.github.io/UIUXProject1-playeRC/" target="_blank">play!eRC</a>
+          HTML, CSS, Javascript, jQuery, Web Standard: RC & Hobby shop
+        </div>
+        <div class="swiper-slide">
+          <div class="webpageFrame">
+            <img src="images/jakeanam.github.io_UIUXProject2-FedEx-new_.png" alt="webDesign2">
+          </div>
+          <a href="https://jakeanam.github.io/UIUXProject2-FedEx-new/" target="_blank">Fedex Renewal</a>
+          HTML, CSS, Javascript jQuery, Reactive Web Design: Fedex Web renewal
+        </div>
+        <div class="swiper-slide">
+          <div class="webpageFrame">
+            <img src="images/jakeanam.github.io_UIUXProject3-BUKSTOR_.png" alt="webDesign3">
+          </div>
+          <a href="https://jakeanam.github.io/UIUXProject3-BUKSTOR/" target="_blank">BUKSTOR</a>
+          HTML, SCSS, KakaoAPI, Javascript: Book Store
+        </div>
+        <div class="swiper-slide">
+          <div class="webpageFrame">
+            <img src="images/jakeanam.github.ioUIUXProject4-SJLS.png" alt="webDesign4">
+          </div>
+          <a href="https://jakeanam.github.io/UIUXProject4-SJLS" target="_blank">SJLS Language School</a>
+          React, SCSS, Javascript: Language Center
+        </div>
+        <div class="swiper-slide">
+          <div class="webpageFrame">
+            <img src="images/jalgaram.github.io_parket_.png" alt="webDesign4">
+          </div>
+          <a href="https://jalgaram.github.io/parket" target="_blank">PARKET</a>
+          React, SCSS, Javascript: Parking Management
+        </div>
+      </div>
+      <!-- ≡&times; -->
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div> -->
+    </div>
+  </div>
+
+  
+  
+
+  <!-- 연락처, 끝 인사 -->
+  <div id="conclusion">
+    <div class="closingCover"></div>
+    <div class="closing">
+      <p>Jake's Portfolio</p>
+      <ul class="kor">
+        <li>함께 일할 수 있기를<br>기대합니다!</li>
+        <li>더 알고 싶으시다면 연락해주세요!</li>
+      </ul>
+      <ul class="eng">
+        <li>Hope we can<br>work together!</li>
+        <li>If you want to know about more, please contact me!</li>
+      </ul>
+      <ul class="jpn">
+        <li>一緒に勤められることに<br>ご期待致します!</li>
+        <li>もっと気になることがあると、ご連絡お願い致します。</li>
+      </ul>
+    </div>
+
+    <ul class="contact">
+      <li><img src="./images/contect/phone.png" alt="phone"></li>
+      <li><img src="./images/contect/kakaotalk.png" alt="naverMail"></li>
+      <li><img src="./images/contect/line.png" alt="naverMail"></li>
+      <li><img src="./images/contect/linkedIn.png" alt="linkedIn"></li>
+      <li><img src="./images/contect/naverMail.png" alt="naverMail"></li>
+      <li><img src="./images/contect/gmail.png" alt="gmail"></li>
+      <li><img src="./images/contect/github.png" alt="github"></li>
+    </ul>
+
+    <ul class="contactPop">
+      <li class="phone">+82-10-6424-9627</li>
+      <li class="naverMail">nams93627@naver.com</li>
+      <li class="gmail">jake.a.nam@gmail.com</li>
+      <li class="linkedIn">https://www.linkedin.com/in/eo-jin-nam-739221232</li>
+      <li class="github">https://github.com/JakeANam</li>
+    </ul>
+  <div id="changingLanguage">
+    <div class="kor"><span>한국어로 바꾸는</span><span>중 입니다.</span></div>
+    <div class="eng"><span>Translating</span><span>in English.</span></div>
+    <div class="jpn"><span>日本語で</span><span>変えています。</span></div>
+  </div>
+
+</body>
+<!-- swiper 구동 -->
+<script>
+  var swiper = new Swiper(".visitSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 0
+  });
+</script>
+<script>
+  var swiper = new Swiper(".worksSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true
+  });
+</script>
+</html>
