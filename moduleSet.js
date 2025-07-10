@@ -1,8 +1,8 @@
 // 방문 지역
-import { visitedAreas, picturesUtah, picturesSydney, picturesNagoya } from "./picturesVisited.js"
+import { visitedAreas, picturesUtah, picturesSydney, picturesNagoya } from "./datas/picturesVisited.js"
 
 //skills
-import skills from './skills.js'
+import skills from './datas/skills.js'
 
 jQuery(document).ready(function(){
     // 방문 지역 
@@ -30,10 +30,9 @@ jQuery(document).ready(function(){
     }
 
     // skills
-    console.log(skills)
     let skillList = $('.popSkills ul');
     for(let skill of skills) {
-        let oneSkill = '<li><div>';
+        let oneSkill = '<li><div class=' + skill.skillType + '>';
         oneSkill += '<img src="./images/logos/'+ skill.skillName +'.png" alt="' + skill.skillType + '">';
         oneSkill += '</div></li>';
         $(oneSkill).appendTo(skillList);

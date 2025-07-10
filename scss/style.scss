@@ -8,6 +8,7 @@ $gray3: #555555;
 $blue1: #3366ff;
 $blue2: #1e90ff;
 $blue3: #000080;
+$blue4: #87ceeb;
 
 @mixin pageFormat {
     width: calc(100% - 100px);
@@ -83,20 +84,7 @@ body {
     align-items: center;
     overflow: hidden;
 
-    div:first-child{
-        background-color:$blue3;
-        width: 95%;
-        padding-left: 5%;
-        position: absolute;
-        top: 0%;
-        z-index: 1;
-
-        img {
-            display: block;
-        }
-    }
-
-    div:last-child {
+    div {
         display: flex;
 
         a {
@@ -184,25 +172,37 @@ ul.headerSub {
         font-size: 1.5em;
         color: $whitePerfect;
         position: relative;
-        z-index: 2;
+        z-index: 3;
+
+        p {
+            position: relative;
+            left: 100%;
+            opacity: 0;
+        }
     }
 
     // 첫 화면 슬라이드
-    ul {
+    .introSlide {
         position: absolute;
         display: flex;
         z-index: 1;
         left: 0;
         top: 0;
-        height: 50%;
+        height: 100%;
+        opacity: 0;
 
-        // li {
-        //     height: 50%;
-        //     width: 50%; 
-        // }
-        img {
-            height: 15%;
+        li {
+            height: 100%;
+
+            // &:first-of-type{
+            //     background-color: #1e90ff;
+            // }
+
+            img {
+                height: 100%;
+            }
         }
+        
         
     }
 }
@@ -350,24 +350,59 @@ ul.headerSub {
             height: calc(100% - 50px);
             display: flex;
             flex-wrap: wrap;
-        }
 
-        li {
-            background-color: $whitePerfect;
-            width: calc((100% / 8) - 10px);
-            height: calc(25% - 10px);
-            margin: 5px;
+            li {
+                background-color: $whitePerfect;
+                width: calc((100% / 8) - 10px);
+                height: calc(25% - 10px);
+                margin: 5px;
 
-            div {
-                margin: auto;
-                
-                img {
-                    // width: 100%;
+                div {
+                    margin: auto;
+                    border-width: 3px;
+                    border-style: solid;
+                    border-radius: 10%;
+                    overflow: hidden;
+
+                    &.programmingTools {
+                        border-color: lightpink;
+                    }
+
+                    &.frontend {
+                        border-color: dodgerblue;
+                    }
+
+                    &.database {
+                        border-color: orange;
+                    }
+
+                    &.backend {
+                        border-color: lightgreen;
+                    }
+
+                    &.designTool {
+                        border-color: palevioletred;
+                    }
+
+                    &.server {
+                        border-color: crimson;
+                    }
+                    &.webFramework {
+                        border-color: teal;
+                    }
+
+                    img {
+                        display: block;
+                        position: relative;
+                        transform: translate(-50%, -50%);
+                        top: 50%;
+                        left: 50%
+                    }
                 }
-            }
+            }    
         }
 
-        
+            
     }
 
     .popBackend {
@@ -537,7 +572,7 @@ ul.headerSub {
     #selectLanguage {
         justify-content: flex-start;
 
-        div:last-child {
+        div {
             flex-direction: column;
             width: auto;
             margin-left: 5%;
@@ -571,7 +606,7 @@ ul.headerSub {
     #selectLanguage {
         justify-content: space-evenly;
 
-        div:last-child {
+        div {
             flex-direction: row;
             justify-content: space-around;
             align-items: center;

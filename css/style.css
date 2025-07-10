@@ -30,25 +30,14 @@ body {
   align-items: center;
   overflow: hidden;
 }
-#selectLanguage div:first-child {
-  background-color: #000080;
-  width: 95%;
-  padding-left: 5%;
-  position: absolute;
-  top: 0%;
-  z-index: 1;
-}
-#selectLanguage div:first-child img {
-  display: block;
-}
-#selectLanguage div:last-child {
+#selectLanguage div {
   display: flex;
 }
-#selectLanguage div:last-child a {
+#selectLanguage div a {
   display: flex;
   color: #ffffff;
 }
-#selectLanguage div:last-child a:hover {
+#selectLanguage div a:hover {
   font-weight: bold;
 }
 
@@ -117,18 +106,27 @@ ul.headerSub li {
   font-size: 1.5em;
   color: #ffffff;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
-#introduction ul {
+#introduction .greething p {
+  position: relative;
+  left: 100%;
+  opacity: 0;
+}
+#introduction .introSlide {
   position: absolute;
   display: flex;
   z-index: 1;
   left: 0;
   top: 0;
-  height: 50%;
+  height: 100%;
+  opacity: 0;
 }
-#introduction ul img {
-  height: 15%;
+#introduction .introSlide li {
+  height: 100%;
+}
+#introduction .introSlide li img {
+  height: 100%;
 }
 
 #about {
@@ -327,14 +325,46 @@ ul.headerSub li {
   display: flex;
   flex-wrap: wrap;
 }
-#about .popSkills li {
+#about .popSkills ul li {
   background-color: #ffffff;
   width: calc(12.5% - 10px);
   height: calc(25% - 10px);
   margin: 5px;
 }
-#about .popSkills li div {
+#about .popSkills ul li div {
   margin: auto;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10%;
+  overflow: hidden;
+}
+#about .popSkills ul li div.programmingTools {
+  border-color: lightpink;
+}
+#about .popSkills ul li div.frontend {
+  border-color: dodgerblue;
+}
+#about .popSkills ul li div.database {
+  border-color: orange;
+}
+#about .popSkills ul li div.backend {
+  border-color: lightgreen;
+}
+#about .popSkills ul li div.designTool {
+  border-color: palevioletred;
+}
+#about .popSkills ul li div.server {
+  border-color: crimson;
+}
+#about .popSkills ul li div.webFramework {
+  border-color: teal;
+}
+#about .popSkills ul li div img {
+  display: block;
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 #about .popBackend {
   width: calc(100% - 100px);
@@ -511,26 +541,26 @@ ul.headerSub li {
   #selectLanguage {
     justify-content: flex-start;
   }
-  #selectLanguage div:last-child {
+  #selectLanguage div {
     flex-direction: column;
     width: auto;
     margin-left: 5%;
   }
-  #selectLanguage div:last-child a {
+  #selectLanguage div a {
     flex-direction: row;
     align-items: center;
     width: auto;
     height: 120px;
   }
-  #selectLanguage div:last-child a:nth-of-type(2) {
+  #selectLanguage div a:nth-of-type(2) {
     margin: 40px 0;
   }
-  #selectLanguage div:last-child a img {
+  #selectLanguage div a img {
     width: auto;
     display: block;
     width: 180px;
   }
-  #selectLanguage div:last-child a span {
+  #selectLanguage div a span {
     font-size: 3em;
   }
 }
@@ -538,22 +568,22 @@ ul.headerSub li {
   #selectLanguage {
     justify-content: space-evenly;
   }
-  #selectLanguage div:last-child {
+  #selectLanguage div {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 90%;
     margin-left: 0;
   }
-  #selectLanguage div:last-child a {
+  #selectLanguage div a {
     flex-direction: column;
     align-items: center;
     width: 28%;
   }
-  #selectLanguage div:last-child a img {
+  #selectLanguage div a img {
     height: 15vh;
   }
-  #selectLanguage div:last-child span {
+  #selectLanguage div span {
     font-size: 2.8em;
   }
 }
