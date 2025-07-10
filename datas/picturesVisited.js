@@ -1,8 +1,8 @@
 // Module: 방문한 지역 목록 & 사진
 
-let visitedAreas = ['utah','sydney','nagoya']
+const visitedAreas = ['utah','sydney','nagoya']
 
-let picturesUtah = [
+const picturesUtah = [
     "20191018_162309.jpg",
     "20191019_142959.jpg",
     "20191021_144131.jpg",

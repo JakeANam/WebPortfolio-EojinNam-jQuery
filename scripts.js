@@ -16,6 +16,14 @@ jQuery(document).ready(function() {
         }
     });
 
+    // 첫 화면 자동슬라이드 
+    let slideBody = $('#introduction .introSlide');
+    // console.log(slideBody);
+    // console.log(slideBody.children());
+    // console.log(slideBody.children().eq(0));
+    slideBody.animate({'left':'100px'});
+    // slideBody.children().eq(0).appendTo(slideBody);
+
     // 연락처 버튼 눌렀을때 팝업
     $('.contact li').click(function() {
         let toshow = $(this).children().attr("alt");
@@ -87,16 +95,28 @@ function resetElementSize() {
     let visitImage = $('.visitSwiper li>img');
     visitImage.width(visitImage.height() / 3 * 4);
 
-    
-    let skillsImg = $('.popSkills ul>li');
+    // skill 크기 설정
+    let skillsCell = $('.popSkills ul>li');
+    let skillsFrame = skillsCell.children()
+    let skillsImg = skillsFrame.children()
     // 세로로 긴 화면: 높이가 너비보다 더 큰 값
-    if (skillsImg.height() > skillsImg.width()) {
-        skillsImg.children().height(skillsImg.width() - 20);
-        skillsImg.children().width(skillsImg.width() - 20);
+    if (skillsCell.height() > skillsCell.width()) {
+        skillsFrame.height(skillsCell.width() - 20);
+        skillsFrame.width(skillsCell.width() - 20);
     } else {
-        skillsImg.children().height(skillsImg.height() - 20);
-        skillsImg.children().width(skillsImg.height() - 20);
+        skillsFrame.height(skillsCell.height() - 20);
+        skillsFrame.width(skillsCell.height() - 20);
     }
+
+    if(skillsImg.width() >= skillsFrame.width() ||  skillsImg.width() >= skillsImg.height()) {
+        skillsImg.width('100%');
+        skillsImg.height('auto');
+    } else if (skillsImg.height() >= skillsFrame.height() || skillsImg.height() >= skillsImg.width()) {
+        skillsImg.height('100%');
+        skillsImg.width('auto');
+    }
+
+
 }
 
 // 첫 화면 언어 선택
@@ -112,6 +132,16 @@ function chooseLanguageFirst(lang) {
     $('#selectLanguage').slideUp(1000);
     $('header').delay(1000).animate({'top':'0'});
     $('.headerSub').delay(1000).animate({'top':'0'});
+}
+
+// 첫 화면 애니메이션 실행
+function startIntroAnimation() {
+
+}
+
+// 첫 화면 애니메이션 정지
+function stopIntroAnimation() {
+
 }
 
 // 자기소개 팝업 열기
@@ -172,4 +202,3 @@ function changeLanguage(lang) {
 
 }
 
-// 초기 실행

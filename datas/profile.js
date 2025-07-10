@@ -1,4 +1,4 @@
-let profile = [
+const profile = [
     {
         langCode: 'kor',
         name: '남어진(Jake)',
