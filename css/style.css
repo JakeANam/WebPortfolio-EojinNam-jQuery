@@ -152,7 +152,6 @@ ul.headerSub li {
 #about .mainImg {
   width: 33%;
   padding-right: 2%;
-  height: 40vh;
   overflow: hidden;
 }
 #about .mainImg img {
@@ -161,7 +160,6 @@ ul.headerSub li {
 #about .profile {
   width: 63%;
   padding-left: 2%;
-  height: 40vh;
 }
 #about .profile li {
   height: 20%;
@@ -297,6 +295,7 @@ ul.headerSub li {
   opacity: 0;
   transform: translateX(-50%);
   left: 100%;
+  overflow: auto;
 }
 #about .popExperience h2,
 #about .popBackend h2 {
@@ -333,12 +332,17 @@ ul.headerSub li {
   padding-left: 20px;
   padding-bottom: 30px;
 }
+#about .popExperience div ul li,
+#about .popBackend div ul li {
+  margin-bottom: 20px;
+}
 #about .popExperience div ul li > h3,
 #about .popBackend div ul li > h3 {
   margin-left: -20px;
 }
 #about .popExperience div ul li p,
 #about .popBackend div ul li p {
+  font-size: 1.2em;
   height: 30px;
   display: flex;
   align-items: center;
@@ -352,6 +356,10 @@ ul.headerSub li {
 #about .popBackend div ul li img {
   display: inline-block;
   height: 30px;
+}
+#about .popExperience.popExperience ul:nth-of-type(2) p:nth-of-type(2),
+#about .popBackend.popExperience ul:nth-of-type(2) p:nth-of-type(2) {
+  color: #555555;
 }
 #about .popSkills {
   width: calc(100% - 100px);
@@ -451,6 +459,9 @@ ul.headerSub li {
   line-height: 75px;
   font-size: 1.8em;
 }
+#works h2 {
+  color: #ffffff;
+}
 #works .swiper {
   width: 100%;
   height: calc(100% - 50px);
@@ -465,12 +476,10 @@ ul.headerSub li {
   box-sizing: border-box;
   background: #f5f5dd;
   display: flex;
-  flex-direction: column;
   overflow: visible;
 }
 #works .swiper-slide .webpageFrame {
   overflow: auto;
-  height: 50%;
 }
 #works .swiper-slide .webpageFrame img {
   display: block;
@@ -587,12 +596,20 @@ ul.headerSub li {
   top: 0;
   left: 0%;
   font-size: 3em;
-  background-color: #1e90ff;
-  border-left: 150px solid #3366ff;
-  border-right: 150px solid #3366ff;
+  font-weight: bold;
+  background-color: #3366ff;
+  border-left: 150px solid #1e90ff;
+  border-right: 150px solid #1e90ff;
 }
 
 @media (max-width: 999px) {
+  #about {
+    flex-direction: column;
+  }
+  #about .mainImg,
+  #about .profile {
+    height: 20vh;
+  }
   #selectLanguage {
     justify-content: flex-start;
   }
@@ -618,8 +635,22 @@ ul.headerSub li {
   #selectLanguage div a span {
     font-size: 3em;
   }
+  #works .swiper-slide {
+    flex-direction: column;
+  }
+  #works .swiper-slide .webpageFrame {
+    height: 50%;
+    width: 100%;
+  }
 }
 @media (min-width: 1000px) {
+  #about {
+    flex-direction: row;
+  }
+  #about .mainImg,
+  #about .profile {
+    height: 40vh;
+  }
   #selectLanguage {
     justify-content: space-evenly;
   }
@@ -640,5 +671,12 @@ ul.headerSub li {
   }
   #selectLanguage div span {
     font-size: 2.8em;
+  }
+  #works .swiper-slide {
+    flex-direction: row;
+  }
+  #works .swiper-slide .webpageFrame {
+    height: 100%;
+    width: 50%;
   }
 }

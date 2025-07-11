@@ -157,14 +157,14 @@ jQuery(document).ready(function(){
         let works = '<ul>';
         for (let work of oneInfo.workExperience) {
             let oneWork = '<li>'
-            oneWork += '<p>' + work.companyName + '<span>' + work.duration + '/' + work.location;
+            oneWork += '<p>' + work.companyName + '</p><p>' + work.duration + '/' + work.location;
 
             for (let country of contries) {
                 if (country.countryCode3 === work.country) {
                     oneWork += '<img src="./images/' + country.countryFlag + '" alt="' + country.countryCode2 + '">';
                 }
             }
-            oneWork += '</span></p>';
+            oneWork += '</p>';
             oneWork += '</li>';
             works += oneWork
         }

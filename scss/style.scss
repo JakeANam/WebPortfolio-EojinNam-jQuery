@@ -225,7 +225,6 @@ ul.headerSub {
     .mainImg {
         width: 33%;
         padding-right: 2%;
-        height: 40vh;
         overflow: hidden;
 
         img {
@@ -236,7 +235,6 @@ ul.headerSub {
     .profile {
         width: 63%;
         padding-left: 2%;
-        height: 40vh;
 
         li {
             height: 20%;
@@ -357,6 +355,7 @@ ul.headerSub {
     .popExperience,
     .popBackend {
         @include popupFormat();
+        overflow: auto;
 
         div {
             padding: 30px;
@@ -366,10 +365,14 @@ ul.headerSub {
                 padding-bottom: 30px;
 
                 li {
+                    margin-bottom: 20px;
+
                     &>h3 {
                         margin-left: -20px;
                     }
+
                     p {
+                        font-size: 1.2em;
                         height: 30px;
                         display: flex;
                         align-items: center;
@@ -387,6 +390,10 @@ ul.headerSub {
                 }
                 
             }
+        }
+
+        &.popExperience ul:nth-of-type(2) p:nth-of-type(2) {
+            color:$gray3;
         }
     }
 
@@ -449,15 +456,7 @@ ul.headerSub {
                 }
             }    
         }
-
-            
     }
-
-    // .popBackend {
-    //     @include popupFormat();
-    //     padding: 30px;
-
-    // }
 }
 
 // 작업 내용
@@ -465,6 +464,10 @@ ul.headerSub {
     @include pageFormat();
     background-color: $blue1;
     overflow: hidden;
+
+    h2 {
+        color: $whitePerfect;
+    }
 
     .swiper {
       width: 100%;
@@ -481,12 +484,11 @@ ul.headerSub {
       box-sizing: border-box;
       background: $whiteDusky;
       display: flex;
-      flex-direction: column;
+    //   flex-direction: column;
       overflow: visible;
 
-        .webpageFrame{
+        .webpageFrame {
             overflow: auto;
-            height: 50%;
 
             img {
                 display: block;
@@ -614,13 +616,23 @@ ul.headerSub {
         top: 0;
         left: 0%;
         font-size: 3em;
-        background-color: $blue2;
-        border-left: 150px solid $blue1;
-        border-right: 150px solid $blue1;
+        font-weight: bold;
+        background-color: $blue1;
+        border-left: 150px solid $blue2;
+        border-right: 150px solid $blue2;
     }
 }
 
 @media (max-width: 999px) {
+    #about {
+        flex-direction: column;
+
+        .mainImg,
+        .profile {
+            height: 20vh;
+        }
+    }
+
     #selectLanguage {
         justify-content: flex-start;
 
@@ -652,9 +664,29 @@ ul.headerSub {
             } 
         }
     }
+
+    #works {
+        .swiper-slide {
+            flex-direction: column;
+            
+            .webpageFrame {
+                height: 50%;
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (min-width: 1000px) {
+    #about {
+        flex-direction: row;
+
+        .mainImg,
+        .profile {
+            height: 40vh;
+        }
+    }
+
     #selectLanguage {
         justify-content: space-evenly;
 
@@ -677,6 +709,17 @@ ul.headerSub {
             
             span {
                 font-size: 2.8em;
+            }
+        }
+    }
+
+    #works {
+        .swiper-slide {
+            flex-direction: row;
+
+            .webpageFrame {
+                height: 100%;
+                width: 50%;
             }
         }
     }
