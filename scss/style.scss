@@ -17,6 +17,13 @@ $blue4: #87ceeb;
     padding: 50px;
     padding-top: 100px;
     position: relative;
+
+    h2 {
+        width: 100%;
+        height: 75px;
+        line-height: 75px;
+        font-size: 1.8em;
+    }
 }
 
 @mixin popupFormat {
@@ -32,6 +39,8 @@ $blue4: #87ceeb;
     h2 {
             height: 50px;
             line-height: 50px;
+            padding-left: 30px;
+            width: calc(100% - 30px);
             display: flex;
             justify-content: space-between;
             color: navy;
@@ -41,11 +50,16 @@ $blue4: #87ceeb;
                 height: 40px;
                 line-height: 40px;
                 margin: 5px;
-                background-color: navy;
+                background-color: $blue3;
                 color: $whitePerfect;
                 text-align: center;
                 // border-radius: 50%;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: $blue2;
+                    color: $blue3;
+                }
             }
         }
 }
@@ -62,10 +76,6 @@ ul, ol, li {
 
 a {
     text-decoration: none;
-}
-
-h2 {
-    width: 100%;
 }
 
 body {
@@ -210,6 +220,7 @@ ul.headerSub {
     background-color: $blue4;
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
 
     .mainImg {
         width: 33%;
@@ -261,6 +272,11 @@ ul.headerSub {
                 text-align: center;
                 padding: 5px 0;
                 font-size: 1.5em;
+
+                &:hover {
+                    background-color: $blue2;
+                    color: $blue3;
+                }
             }
         }
     }
@@ -269,7 +285,6 @@ ul.headerSub {
     .popVisited {
         @include popupFormat();
         overflow: hidden;
-        
         // 소제목
         p {
             display: flex;
@@ -293,7 +308,7 @@ ul.headerSub {
                 justify-content: space-between;
                 padding: 50px;
                 height: calc(100% - 100px);
-                background-color: #f5f5dc;
+                background-color: $whiteDusky;
 
                 li {
                     width: 30%;
@@ -303,7 +318,7 @@ ul.headerSub {
                     justify-content: center;
 
                     img {
-                        display: block
+                        display: block;
                     }
 
                     &:nth-of-type(4) {
@@ -339,15 +354,21 @@ ul.headerSub {
         }  
     }
 
-    .popExperience {
+    .popExperience,
+    .popBackend {
         @include popupFormat();
 
         div {
-            padding: 20px;
+            padding: 30px;
+
             ul {
                 padding-left: 20px;
                 padding-bottom: 30px;
+
                 li {
+                    &>h3 {
+                        margin-left: -20px;
+                    }
                     p {
                         height: 30px;
                         display: flex;
@@ -432,15 +453,17 @@ ul.headerSub {
             
     }
 
-    .popBackend {
-        @include popupFormat();
-    }
+    // .popBackend {
+    //     @include popupFormat();
+    //     padding: 30px;
+
+    // }
 }
 
 // 작업 내용
 #works {
     @include pageFormat();
-    background-color: rosybrown;
+    background-color: $blue1;
     overflow: hidden;
 
     .swiper {
@@ -454,7 +477,9 @@ ul.headerSub {
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: lightpink;
+      padding: 50px;
+      box-sizing: border-box;
+      background: $whiteDusky;
       display: flex;
       flex-direction: column;
       overflow: visible;

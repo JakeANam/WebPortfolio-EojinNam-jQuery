@@ -1,4 +1,4 @@
-const profile = [
+export const profile = [
     {
         langCode: 'kor',
         name: '남어진(Jake)',

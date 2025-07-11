@@ -1,37 +1,5 @@
 const skills =[
     {
-        "skillName": "vsCode",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "notepadPlus",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "eclipse",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "googleColab",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "sakuraEditor",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "inteliJ",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "pyCharm",
-        "skillType": "programmingTools"
-    },
-    {
-        "skillName": "roboflow",
-        "skillType": "programmingTools"
-    },
-    {
         "skillName": "javascript",
         "skillType": "frontend"
     },
@@ -126,6 +94,37 @@ const skills =[
     {
         "skillName": "swiper",
         "skillType": "webFramework"
+    }, {
+        "skillName": "vsCode",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "notepadPlus",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "eclipse",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "googleColab",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "sakuraEditor",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "inteliJ",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "pyCharm",
+        "skillType": "programmingTools"
+    },
+    {
+        "skillName": "roboflow",
+        "skillType": "programmingTools"
     }
 ]
 

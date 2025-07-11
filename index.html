@@ -240,7 +240,7 @@
     <!-- 학력 & 경력 -->
     <div class="popExperience">
       <h2>
-        <span class="kor">학내가 배우고 일한 곳</span>
+        <span class="kor">내가 배우고 일한 곳</span>
         <span class="eng">Scolarship & Experiences</span>
         <span class="jpn">学歴と経歴</span>
         <span class="closePop">&times;</span>
@@ -267,16 +267,8 @@
         <span class="closePop">&times;</span>
       </h2>
 
-      <ul>
-        <li>학생용 포털 - html, css, javascript, jQuery</li>
-        <li>음악 스트리밍 사이트 - html, css, javascript, jQuery, Java/JSP, Oracle</li>
-        <li>상점 재고/매출 관리 시스템 - html, css, javascript, Java/JSP, MySQL</li>
-        <li>하천 부유물 탐지 시스템 - python, Roboflow, html, css, Java/JSP, SpringBoot</li>
-        <li>도로 차량 탐지 시스템 - python, Roboflow, html, css, Java/JSP, SpringBoot, Oracle</li>
-      </ul>
-    </div>
+    </div> 
   </div>
-
   
   <!-- Frontend & Web design 경험 -->
   <div id="works">
@@ -323,9 +315,7 @@
         </div>
       </div>
       <!-- ≡&times; -->
-      <!-- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div> -->
+      
     </div>
   </div>
 
@@ -365,6 +355,8 @@
       <li class="linkedIn">https://www.linkedin.com/in/eo-jin-nam-739221232</li>
       <li class="github">https://github.com/JakeANam</li>
     </ul>
+  </div>
+
   <div id="changingLanguage">
     <div class="kor"><span>한국어로 바꾸는</span><span>중 입니다.</span></div>
     <div class="eng"><span>Translating</span><span>in English.</span></div>
@@ -393,7 +385,8 @@
   <script>
     var swiper = new Swiper(".visitSwiper", {
       slidesPerView: 1,
-      spaceBetween: 0
+      spaceBetween: 0,
+      grabCursor: true
     });
   </script>
 
@@ -402,7 +395,8 @@
     var swiper = new Swiper(".worksSwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
-      loop: true
+      loop: true,
+      grabCursor: true
     });
   </script>
 

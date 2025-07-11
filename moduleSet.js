@@ -1,3 +1,6 @@
+// 언어 목록
+const arrayLanguage = ['kor', 'eng', 'jpn'];
+
 // 방문 지역
 import { visitedAreas, picturesUtah, picturesSydney, picturesNagoya } from "./datas/picturesVisited.js";
 
@@ -6,6 +9,9 @@ import { contries } from "./datas/countries.js";
 
 // skills
 import skills from './datas/skills.js';
+
+// Backend 경력
+import backendWorks from "./datas/backendWorks.js";
 
 // 프로필
 import profile from './datas/profile.js';
@@ -43,12 +49,56 @@ jQuery(document).ready(function(){
         oneSkill += '</div></li>';
         $(oneSkill).appendTo(skillList);
     }
+
+    // Backend 경력
+    // console.log(backendWorks);
+    let backendPop = $('.popBackend');
+    for (let language of arrayLanguage) {
+        let backendForm = '<div class="backendForm ' + language + '">'
+        let backendList = '<ul>';
+
+        for (let oneProject of backendWorks) {
+            let projectDetail = '<li>';
+            let projectName = '';
+            let projectRole = '';
+            let projectPlace = '';
+
+            switch (language) {
+                case 'kor':
+                    projectName = '<h3>' + oneProject.projectsName.nameKor + '</h3>';
+                    projectRole = '<p>역할: ' + oneProject.role.roleKor + '</p>';
+                    projectPlace = '<p>' + oneProject.place.placeKor + '</p>';
+                    break;
+
+                case 'eng':
+                    projectName = '<h3>' + oneProject.projectsName.nameEng + '</h3>';
+                    projectRole = '<p>role: ' + oneProject.role.roleEng + '</p>';
+                    projectPlace = '<p>place: ' + oneProject.place.placeEng + '</p>';
+                    break;
+
+                case 'jpn':
+                    projectName = '<h3>' + oneProject.projectsName.nameJpn + '</h3>';
+                    projectRole = '<p>役割: ' + oneProject.role.roleJpn + '</p>';
+                    projectPlace = '<p>実施機関: ' + oneProject.place.placeJpn + '</p>';
+                    break;
+            }
+
+            
+
+            projectDetail +=  projectName + projectRole + projectPlace + '</li>'
+            backendList += projectDetail;
+        }
+
+
+        backendForm += backendList + '</ul></div>'
+        $(backendForm).appendTo(backendPop);
+    }
+    
     
     // 프로필
     // 학력 & 경력
     let popExperience = $('.popExperience');
     for (let oneInfo of profile) {
-        console.log(oneInfo);
 
         // 전체 form
         let experienceForm = '<div class="' + oneInfo.langCode + '">';

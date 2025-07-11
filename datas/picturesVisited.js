@@ -1,8 +1,7 @@
 // Module: 방문한 지역 목록 & 사진
+export const visitedAreas = ['utah','sydney','nagoya']
 
-const visitedAreas = ['utah','sydney','nagoya']
-
-const picturesUtah = [
+export const picturesUtah = [
     "20191018_162309.jpg",
     "20191019_142959.jpg",
     "20191021_144131.jpg",
@@ -14,7 +13,7 @@ const picturesUtah = [
     "20191028_131050.jpg"
 ];
 
-let picturesSydney = [
+export const picturesSydney = [
     "20191214_193941.jpg",
     "20191221_150606.jpg",
     "20191225_172445.jpg",
@@ -26,7 +25,7 @@ let picturesSydney = [
     "20200224_154114.jpg"
 ];
 
-let picturesNagoya = [
+export const picturesNagoya = [
     "20240424_134328.jpg",
     "20240425_171547.jpg",
     "20240426_111010.jpg",
@@ -37,5 +36,3 @@ let picturesNagoya = [
     "20240824_152337_IMG_0725.jpg",
     "20240907_125925_IMG_0772.jpg"
 ];
-
-export { visitedAreas, picturesUtah,  picturesSydney,  picturesNagoya };

@@ -11,10 +11,6 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  width: 100%;
-}
-
 body {
   position: relative;
 }
@@ -102,6 +98,12 @@ ul.headerSub li {
   position: relative;
   overflow: hidden;
 }
+#introduction h2 {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  font-size: 1.8em;
+}
 #introduction .greething {
   font-size: 1.5em;
   color: #ffffff;
@@ -139,6 +141,13 @@ ul.headerSub li {
   background-color: #87ceeb;
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
+}
+#about h2 {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  font-size: 1.8em;
 }
 #about .mainImg {
   width: 33%;
@@ -184,6 +193,10 @@ ul.headerSub li {
   padding: 5px 0;
   font-size: 1.5em;
 }
+#about .openPop li a:hover {
+  background-color: #1e90ff;
+  color: #000080;
+}
 #about .popVisited {
   width: calc(100% - 100px);
   height: calc(100vh - 150px);
@@ -198,6 +211,8 @@ ul.headerSub li {
 #about .popVisited h2 {
   height: 50px;
   line-height: 50px;
+  padding-left: 30px;
+  width: calc(100% - 30px);
   display: flex;
   justify-content: space-between;
   color: navy;
@@ -207,10 +222,14 @@ ul.headerSub li {
   height: 40px;
   line-height: 40px;
   margin: 5px;
-  background-color: navy;
+  background-color: #000080;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
+}
+#about .popVisited h2 .closePop:hover {
+  background-color: #1e90ff;
+  color: #000080;
 }
 #about .popVisited p {
   display: flex;
@@ -233,7 +252,7 @@ ul.headerSub li {
   justify-content: space-between;
   padding: 50px;
   height: calc(100% - 100px);
-  background-color: #f5f5dc;
+  background-color: #f5f5dd;
 }
 #about .popVisited .visitSwiper ul li {
   width: 30%;
@@ -268,7 +287,8 @@ ul.headerSub li {
 #about .popVisited .visitSwiper ul li:nth-of-type(6) {
   left: -50px;
 }
-#about .popExperience {
+#about .popExperience,
+#about .popBackend {
   width: calc(100% - 100px);
   height: calc(100vh - 150px);
   background-color: #f5f5dd;
@@ -278,40 +298,58 @@ ul.headerSub li {
   transform: translateX(-50%);
   left: 100%;
 }
-#about .popExperience h2 {
+#about .popExperience h2,
+#about .popBackend h2 {
   height: 50px;
   line-height: 50px;
+  padding-left: 30px;
+  width: calc(100% - 30px);
   display: flex;
   justify-content: space-between;
   color: navy;
 }
-#about .popExperience h2 .closePop {
+#about .popExperience h2 .closePop,
+#about .popBackend h2 .closePop {
   width: 40px;
   height: 40px;
   line-height: 40px;
   margin: 5px;
-  background-color: navy;
+  background-color: #000080;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
 }
-#about .popExperience div {
-  padding: 20px;
+#about .popExperience h2 .closePop:hover,
+#about .popBackend h2 .closePop:hover {
+  background-color: #1e90ff;
+  color: #000080;
 }
-#about .popExperience div ul {
+#about .popExperience div,
+#about .popBackend div {
+  padding: 30px;
+}
+#about .popExperience div ul,
+#about .popBackend div ul {
   padding-left: 20px;
   padding-bottom: 30px;
 }
-#about .popExperience div ul li p {
+#about .popExperience div ul li > h3,
+#about .popBackend div ul li > h3 {
+  margin-left: -20px;
+}
+#about .popExperience div ul li p,
+#about .popBackend div ul li p {
   height: 30px;
   display: flex;
   align-items: center;
 }
-#about .popExperience div ul li p span {
+#about .popExperience div ul li p span,
+#about .popBackend div ul li p span {
   display: flex;
   align-items: center;
 }
-#about .popExperience div ul li img {
+#about .popExperience div ul li img,
+#about .popBackend div ul li img {
   display: inline-block;
   height: 30px;
 }
@@ -328,6 +366,8 @@ ul.headerSub li {
 #about .popSkills h2 {
   height: 50px;
   line-height: 50px;
+  padding-left: 30px;
+  width: calc(100% - 30px);
   display: flex;
   justify-content: space-between;
   color: navy;
@@ -337,10 +377,14 @@ ul.headerSub li {
   height: 40px;
   line-height: 40px;
   margin: 5px;
-  background-color: navy;
+  background-color: #000080;
   color: #ffffff;
   text-align: center;
   cursor: pointer;
+}
+#about .popSkills h2 .closePop:hover {
+  background-color: #1e90ff;
+  color: #000080;
 }
 #about .popSkills ul {
   width: 100%;
@@ -390,33 +434,6 @@ ul.headerSub li {
   top: 50%;
   left: 50%;
 }
-#about .popBackend {
-  width: calc(100% - 100px);
-  height: calc(100vh - 150px);
-  background-color: #f5f5dd;
-  position: absolute;
-  display: none;
-  opacity: 0;
-  transform: translateX(-50%);
-  left: 100%;
-}
-#about .popBackend h2 {
-  height: 50px;
-  line-height: 50px;
-  display: flex;
-  justify-content: space-between;
-  color: navy;
-}
-#about .popBackend h2 .closePop {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin: 5px;
-  background-color: navy;
-  color: #ffffff;
-  text-align: center;
-  cursor: pointer;
-}
 
 #works {
   width: calc(100% - 100px);
@@ -425,8 +442,14 @@ ul.headerSub li {
   padding: 50px;
   padding-top: 100px;
   position: relative;
-  background-color: rosybrown;
+  background-color: #3366ff;
   overflow: hidden;
+}
+#works h2 {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  font-size: 1.8em;
 }
 #works .swiper {
   width: 100%;
@@ -438,7 +461,9 @@ ul.headerSub li {
 #works .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: lightpink;
+  padding: 50px;
+  box-sizing: border-box;
+  background: #f5f5dd;
   display: flex;
   flex-direction: column;
   overflow: visible;
@@ -464,6 +489,12 @@ ul.headerSub li {
   background-size: cover;
   background-position: right 0 bottom 50%;
   display: flex;
+}
+#conclusion h2 {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  font-size: 1.8em;
 }
 #conclusion > * {
   z-index: 2;

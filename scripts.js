@@ -21,7 +21,6 @@ jQuery(document).ready(function() {
     // 연락처 버튼 눌렀을때 팝업
     $('.contact li').click(function() {
         let toshow = $(this).children().attr("alt");
-        // console.log($(this).index());
         let contactPop = $('.contactPop').children()
         for (let i= 0; i < contactPop.length; i++) {
             
