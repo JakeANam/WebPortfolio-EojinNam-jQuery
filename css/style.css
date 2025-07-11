@@ -46,7 +46,7 @@ header {
   padding: 0 50px;
   height: 50px;
   top: -50px;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   position: fixed;
   justify-content: space-between;
@@ -136,7 +136,7 @@ ul.headerSub li {
   padding: 50px;
   padding-top: 100px;
   position: relative;
-  background-color: orange;
+  background-color: #87ceeb;
   display: flex;
   flex-wrap: wrap;
 }
@@ -177,9 +177,12 @@ ul.headerSub li {
 }
 #about .openPop li a {
   width: 40%;
-  background-color: palevioletred;
+  background-color: #000080;
+  color: #ffffff;
   margin: 10px 0;
   text-align: center;
+  padding: 5px 0;
+  font-size: 1.5em;
 }
 #about .popVisited {
   width: calc(100% - 100px);
@@ -197,6 +200,7 @@ ul.headerSub li {
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  color: navy;
 }
 #about .popVisited h2 .closePop {
   width: 40px;
@@ -206,7 +210,6 @@ ul.headerSub li {
   background-color: navy;
   color: #ffffff;
   text-align: center;
-  border-radius: 50%;
   cursor: pointer;
 }
 #about .popVisited p {
@@ -280,6 +283,7 @@ ul.headerSub li {
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  color: navy;
 }
 #about .popExperience h2 .closePop {
   width: 40px;
@@ -289,8 +293,27 @@ ul.headerSub li {
   background-color: navy;
   color: #ffffff;
   text-align: center;
-  border-radius: 50%;
   cursor: pointer;
+}
+#about .popExperience div {
+  padding: 20px;
+}
+#about .popExperience div ul {
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+#about .popExperience div ul li p {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+#about .popExperience div ul li p span {
+  display: flex;
+  align-items: center;
+}
+#about .popExperience div ul li img {
+  display: inline-block;
+  height: 30px;
 }
 #about .popSkills {
   width: calc(100% - 100px);
@@ -307,6 +330,7 @@ ul.headerSub li {
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  color: navy;
 }
 #about .popSkills h2 .closePop {
   width: 40px;
@@ -316,7 +340,6 @@ ul.headerSub li {
   background-color: navy;
   color: #ffffff;
   text-align: center;
-  border-radius: 50%;
   cursor: pointer;
 }
 #about .popSkills ul {
@@ -330,6 +353,7 @@ ul.headerSub li {
   width: calc(12.5% - 10px);
   height: calc(25% - 10px);
   margin: 5px;
+  display: flex;
 }
 #about .popSkills ul li div {
   margin: auto;
@@ -381,6 +405,7 @@ ul.headerSub li {
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  color: navy;
 }
 #about .popBackend h2 .closePop {
   width: 40px;
@@ -390,7 +415,6 @@ ul.headerSub li {
   background-color: navy;
   color: #ffffff;
   text-align: center;
-  border-radius: 50%;
   cursor: pointer;
 }
 

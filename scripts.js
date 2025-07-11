@@ -118,7 +118,7 @@ function startIntroAnimation() {
     introLogo.delay(2000)
         .animate({'opacity':'1','left':'0'});
     $('#introduction .introSlide').delay(3000)
-        .animate({'opacity':'1'});
+        .animate({'opacity':'0.9'});
 
     setInterval(function(){
         let introSlide = $('#introduction .introSlide');

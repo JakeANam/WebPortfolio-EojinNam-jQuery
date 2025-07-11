@@ -9,7 +9,7 @@ const profile = [
         hobbies: '여행, 사진 찍기',
         educationExperience: [
             {
-                duration: "2012년 9월 ~ 2019년 8월",
+                duration: "2012년 2월 ~ 2019년 8월",
                 schoolName: "순천향대학교",
                 courseName: "생명시스템학과",
                 location: "충남 아산",
@@ -18,21 +18,21 @@ const profile = [
             {
                 duration: "2022년 3월 ~ 2022년 11월",
                 schoolName: "JSL 인재개발원",
-                schoolName: "하이브리드 소프트웨어 전문가 과정",
+                courseName: "하이브리드 소프트웨어 전문가 과정",
                 location: "대전",
                 country: "kor"
             },
             {
                 duration: "2024년 12월 ~ 2025년 2월",
                 schoolName: "MBC 아카데미컴퓨터",
-                schoolName: "심화_AI Roboflow를 활용한 부유물탐지 시스템 구축과정",
+                courseName: "심화_AI Roboflow를 활용한 부유물탐지 시스템 구축과정",
                 location: "경기 수원",
                 country: "kor"
             },
             {
                 duration: "2025년 2월 ~ 2025년 7월",
                 schoolName: "MBC 아카데미컴퓨터",
-                schoolName: "현장수요에 맞는 디지털디자인 (웹디자인, 웹퍼블리셔) 전문가 양성",
+                courseName: "현장수요에 맞는 디지털디자인 (웹디자인, 웹퍼블리셔) 전문가 양성",
                 location: "경기 수원",
                 country: "kor"
             }
@@ -82,6 +82,71 @@ const profile = [
         addressLocation: 'Asan-si Chungcheong-namdo',
         addresCountry: 'kor',
         hobbies: 'Travel, Photography',
+        educationExperience: [
+            {
+                duration: "February 2012 ~ August 2019",
+                schoolName: "SoonCheonHyang Univ",
+                courseName: "Biology & Biotechnology",
+                location: "Asan-si Chungcheong-namdo",
+                country: "kor"
+            },
+            {
+                duration: "March 2022 ~ November 2022",
+                schoolName: "JSL Human Resource Development Cente",
+                courseName: "Hybrid Software Advance Course for Japanese employment",
+                location: "Daejeon",
+                country: "kor"
+            },
+            {
+                duration: "December 2024 ~ February 2025",
+                schoolName: "MBC Academy Computer Center",
+                courseName: "Python, AI roboflow Training Course",
+                location: "Suwon-si Gyeonggi-do",
+                country: "kor"
+            },
+            {
+                duration: "February 2025 ~ July 2025",
+                schoolName: "MBC Academy Computer Center",
+                courseName: "UIUX/ Web Design & Web Publish Course",
+                location: "Suwon-si Gyeonggi-do",
+                country: "kor"
+            }
+        ],
+        workExperience: [
+            {
+                duration: "May 2024 ~ October 2024",
+                companyName: "SY systems co. inc.",
+                position: "SoftWare Engineer",
+                location: "Nagoya Aichi",
+                country: "jpn"
+            }
+        ],
+        languageTests:[
+            {
+                testName: "TOEIC",
+                testedDate: "November 2018",
+                grade: "825"
+            },
+            {
+                testName: "JPT",
+                testedDate: "October 2022",
+                grade: "540"
+            }
+        ],
+        lisencesAndCertificate:[
+            {
+                testName: "Industrial Engineer Information Processing",
+                testedDate: "2022년 12월",
+            },
+            {
+                testName: "Craftsman of Web Design",
+                testedDate: "2024년 4월",
+            },
+            {
+                testName: "Craftsman of Computer Graphic (Passed on Written Test)",
+                testedDate: "2025년 4월",
+            }
+        ],
         indexList: ['Name', 'Nationality', 'Birthday', 'Address', 'Hobbies']
     },
     {
@@ -92,6 +157,71 @@ const profile = [
         addressLocation: '忠淸南都 牙山市',
         addresCountry: 'kor',
         hobbies: '旅行、写真撮り',
+        educationExperience: [
+            {
+                duration: "平成24年 2月 ~ 令和元年 8月",
+                schoolName: "順天郷大学",
+                courseName: "生命システム学科",
+                location: "忠淸南都 牙山市",
+                country: "kor"
+            },
+            {
+                duration: "令和4年 3月 ~ 令和4年 11月",
+                schoolName: "JSL人材開発院",
+                courseName: "ハイブリッドソフトウェア専門家課程",
+                location: "大田",
+                country: "kor"
+            },
+            {
+                duration: "令和6年 12月 ~ 令和7年 2月",
+                schoolName: "MBC アカデミー コンピューター",
+                courseName: "AI roboflow 応用課程",
+                location: "京畿道 水原市",
+                country: "kor"
+            },
+            {
+                duration: "令和7年 2月 ~ 令和7年 7月",
+                schoolName: "MBC アカデミー コンピューター",
+                courseName: "UI/UX・Web Design・Web Publish 課程",
+                location: "京畿道 水原市",
+                country: "kor"
+            }
+        ],
+        workExperience: [
+            {
+                duration: "令和6年 5月 ~ 令和6年 10月",
+                companyName: "株式会社エスワイシステム",
+                position: "ソフトウェアエンジニア",
+                location: "愛知県 名古屋市",
+                country: "jpn"
+            }
+        ],
+        languageTests:[
+            {
+                testName: "TOEIC",
+                testedDate: "平成30年 11月",
+                grade: "825"
+            },
+            {
+                testName: "JPT",
+                testedDate: "令和4年 10月",
+                grade: "540"
+            }
+        ],
+        lisencesAndCertificate:[
+            {
+                testName: "過程平価型 情報処理産業技師",
+                testedDate: "令和4年 12月",
+            },
+            {
+                testName: "ウェブデザイン技能士",
+                testedDate: "令和6年 4月",
+            },
+            {
+                testName: "コンピューターグラフィック技能士 (筆記合格)",
+                testedDate: "令和7年 4월",
+            }
+        ],
         indexList: ['名前', '国籍', '生年月', '住所', '趣味']
     }
 ];

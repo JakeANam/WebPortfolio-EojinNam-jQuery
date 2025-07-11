@@ -34,6 +34,7 @@ $blue4: #87ceeb;
             line-height: 50px;
             display: flex;
             justify-content: space-between;
+            color: navy;
 
             .closePop {
                 width: 40px;
@@ -43,7 +44,7 @@ $blue4: #87ceeb;
                 background-color: navy;
                 color: $whitePerfect;
                 text-align: center;
-                border-radius: 50%;
+                // border-radius: 50%;
                 cursor: pointer;
             }
         }
@@ -104,7 +105,7 @@ header {
     padding: 0 50px;
     height: 50px;
     top: -50px;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     position: fixed;
     justify-content: space-between;
@@ -194,10 +195,6 @@ ul.headerSub {
         li {
             height: 100%;
 
-            // &:first-of-type{
-            //     background-color: #1e90ff;
-            // }
-
             img {
                 height: 100%;
             }
@@ -210,7 +207,7 @@ ul.headerSub {
 // 자기소개
 #about {
     @include pageFormat();
-    background-color: orange;
+    background-color: $blue4;
     display: flex;
     flex-wrap: wrap;
 
@@ -258,9 +255,12 @@ ul.headerSub {
 
             a {
                 width: 40%;
-                background-color: palevioletred;
+                background-color: $blue3;
+                color: $whitePerfect;
                 margin: 10px 0;
                 text-align: center;
+                padding: 5px 0;
+                font-size: 1.5em;
             }
         }
     }
@@ -341,6 +341,32 @@ ul.headerSub {
 
     .popExperience {
         @include popupFormat();
+
+        div {
+            padding: 20px;
+            ul {
+                padding-left: 20px;
+                padding-bottom: 30px;
+                li {
+                    p {
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    img {
+                        display: inline-block;
+                        height: 30px;
+                    }    
+                }
+                
+            }
+        }
     }
 
     .popSkills {
@@ -356,6 +382,7 @@ ul.headerSub {
                 width: calc((100% / 8) - 10px);
                 height: calc(25% - 10px);
                 margin: 5px;
+                display: flex;
 
                 div {
                     margin: auto;

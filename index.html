@@ -235,16 +235,9 @@
           </div>
         </div>
       </div>
-      
-      
-      
-        <!-- ここに暮したことがあります。
-        Utah, US
-        Sydney, Australia
-        , 日本 -->
     </div>
 
-    <!-- 학력, 경력 -->
+    <!-- 학력 & 경력 -->
     <div class="popExperience">
       <h2>
         <span class="kor">학내가 배우고 일한 곳</span>
@@ -252,26 +245,6 @@
         <span class="jpn">学歴と経歴</span>
         <span class="closePop">&times;</span>
       </h2>
-
-      <div class="kor"></div>
-      <div class="eng"></div>
-      <div class="jpn"></div>
-      <ul>
-        <li>순천향대학교 생명시스템학과 2012. 2. ~ 2019. 8.</li>
-        <li>JSL 인재개발원 하이브리드 소프트웨어 전문가 과정 2022. 3. ~ 2022. 11.</li>
-        <li>MBC 아카데미컴퓨터 심화_AI Roboflow를 활용한 부유물탐지 시스템 구축과정 2024. 12. ~ 2025. 2.
-        <li>MBC 아카데미컴퓨터 현장수요에 맞는 디지털디자인 (웹디자인, 웹퍼블리셔) 전문가 양성 2025. 2. ~ 2025. 7.</li>
-      </ul>
-      <ul>
-        <li>SY systems co. inc. - 일본 나고야 - 2024. 5. ~ 2024. 11.</li>
-      </ul>
-      <ul>
-        <li>TOEIC 825</li>
-        <li>JPT 540</li>
-        <li>과정평가형정보처리산업기사</li>
-        <li>웹디자인기능사 (현, 웹디자인개발기능사)</li>
-        <li>컴퓨터그래픽기능사 (필기 합격)</li>
-      </ul>
     </div>
 
     <!-- 보유 기술 -->
@@ -356,9 +329,6 @@
     </div>
   </div>
 
-  
-  
-
   <!-- 연락처, 끝 인사 -->
   <div id="conclusion">
     <div class="closingCover"></div>
@@ -401,19 +371,63 @@
     <div class="jpn"><span>日本語で</span><span>変えています。</span></div>
   </div>
 
+  <!-- Swiper -->
+  <!-- <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div> -->
+
 </body>
-<!-- swiper 구동 -->
-<script>
-  var swiper = new Swiper(".visitSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 0
-  });
-</script>
-<script>
-  var swiper = new Swiper(".worksSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true
-  });
-</script>
+  <!-- swiper 구동 -->
+  <!-- 방문지 -->
+  <script>
+    var swiper = new Swiper(".visitSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 0
+    });
+  </script>
+
+  <!-- Frontend & Web design 경험 -->
+  <script>
+    var swiper = new Swiper(".worksSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true
+    });
+  </script>
+
+  <!-- 
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+      // spaceBetween: 30,
+      mousewheel: true,
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+    });
+
+    
+    jQuery(document).ready(function() {
+      
+    });
+  </script>
+  <style>
+    .mySwiper .swiper-slide {
+      background-color: aliceblue;
+    }
+  </style>
+   -->
 </html>
