@@ -4,7 +4,7 @@ let pageNum = 0;
 let systemLanguage = '';
 let clickedY = 0;
 let canScroll = false;
-let clickedContact = 0;
+let clickedURL = '';
 
 // jQuery
 jQuery(document).ready(function() {
@@ -20,28 +20,54 @@ jQuery(document).ready(function() {
 
     // 연락처 버튼 눌렀을때 팝업
     $('.contact li').click(function() {
-        let toshow = $(this).children().attr("alt");
-        let contactPop = $('.contactPop').children()
-        for (let i= 0; i < contactPop.length; i++) {
-            
-            oneContact = contactPop.eq(i);
-            if (oneContact.attr('class') == toshow) {
-                // if (oneContact.css('top') == '0px') {
-                    oneContact.animate({'top':'-80px'});
-                // }
-            } else {
-                oneContact.animate({'top':'0px'});
-            }
+        let clickedButton = $(this).children().attr("src");
+        let clickedContact = $(this).children().attr("alt");
+        let toShow = $('.contactPop .' + clickedContact);
+        // 같은 버튼 눌렀으면 URL 내리기
+        if (clickedURL === clickedButton) {
+            toShow.animate({'top':'0px'});
+            clickedURL = '';
 
-            if ($(this).index() == clickedContact && oneContact.css('top') == '-80px') {
-                oneContact.animate({'top':'0px'});
-            }
+        // 올라온 URL이 없으면 URL 올리기
+        } else if (clickedURL === '') {
+            toShow.animate({'top':'-80px'});
+            clickedURL = clickedButton;
 
-            clickedContact = $(this).index();
+        // 다른 버튼이고 URL도 다르다면 URL 바꾸기
+        // 다른 버튼이지만 같은 URL이면 URL 유지
+        } else if (clickedButton != clickedURL) {
+            toShow.animate({'top':'-80px'});
+            toShow.siblings().animate({'top':'0px'});
+            clickedURL = clickedButton;
         }
     });
 
+    // 연락처 클릭
+    $('.contactPop li').click(function() {
+        let contentURL = $(this).text();
 
+        // http URL이면 페이지 이동
+        if (contentURL.indexOf('https://') >= 0) {
+            setTimeout(function(){
+                window.open(contentURL);
+            }, 1000)
+            
+        } else {
+            navigator.clipboard.writeText(contentURL);
+        }
+
+        $(this).children().eq(1).animate({'opacity':'0'}, function(){
+            $(this).css('display','none').next()
+                .css('display','inline-block')
+                .animate({'opacity':'1'}, function() {
+                    $(this).animate({'opacity':'0'}, function() {
+                        $(this).css('display','none').prev()
+                            .css('display','inline-block')
+                            .animate({'opacity':'1'});
+                    });
+                });
+        })
+    });
 
     // 팝업 닫기
     $('.closePop').click(function() {

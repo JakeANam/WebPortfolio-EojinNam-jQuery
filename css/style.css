@@ -327,35 +327,47 @@ ul.headerSub li {
 #about .popBackend div {
   padding: 30px;
 }
-#about .popExperience div ul,
-#about .popBackend div ul {
+#about .popExperience div > ul,
+#about .popBackend div > ul {
   padding-left: 20px;
   padding-bottom: 30px;
 }
-#about .popExperience div ul li,
-#about .popBackend div ul li {
+#about .popExperience div > ul > li,
+#about .popBackend div > ul > li {
   margin-bottom: 20px;
 }
-#about .popExperience div ul li > h3,
-#about .popBackend div ul li > h3 {
+#about .popExperience div > ul > li > h3,
+#about .popBackend div > ul > li > h3 {
   margin-left: -20px;
 }
-#about .popExperience div ul li p,
-#about .popBackend div ul li p {
+#about .popExperience div > ul > li p,
+#about .popBackend div > ul > li p {
   font-size: 1.2em;
   height: 30px;
   display: flex;
   align-items: center;
 }
-#about .popExperience div ul li p span,
-#about .popBackend div ul li p span {
+#about .popExperience div > ul > li p span,
+#about .popBackend div > ul > li p span {
   display: flex;
   align-items: center;
 }
-#about .popExperience div ul li img,
-#about .popBackend div ul li img {
+#about .popExperience div > ul > li img,
+#about .popBackend div > ul > li img {
   display: inline-block;
   height: 30px;
+}
+#about .popExperience div > ul > li > ul,
+#about .popBackend div > ul > li > ul {
+  display: flex;
+}
+#about .popExperience div > ul > li > ul > li,
+#about .popBackend div > ul > li > ul > li {
+  padding: 0 5px;
+}
+#about .popExperience div > ul > li > ul > li:first-child,
+#about .popBackend div > ul > li > ul > li:first-child {
+  padding-left: 0;
 }
 #about .popExperience.popExperience ul:nth-of-type(2) p:nth-of-type(2),
 #about .popBackend.popExperience ul:nth-of-type(2) p:nth-of-type(2) {
@@ -486,6 +498,55 @@ ul.headerSub li {
   width: 100%;
   overflow: scroll;
 }
+#works .swiper-slide .webInfo {
+  text-align: justify;
+  overflow: auto;
+}
+#works .swiper-slide .webInfo h3 {
+  font-size: 1.5em;
+}
+#works .swiper-slide .webInfo p {
+  font-size: 1.2em;
+}
+#works .swiper-slide .webInfo .explain {
+  padding: 10px;
+  font-size: 1em;
+  color: #222222;
+}
+#works .swiper-slide .webInfo > img {
+  width: 50%;
+}
+#works .swiper-slide .webInfo ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#works .swiper-slide .webInfo ul li {
+  height: 75px;
+  padding: 5px;
+}
+#works .swiper-slide .webInfo ul li img {
+  display: block;
+  height: 100%;
+}
+#works .swiper-slide .webInfo a {
+  background-color: #000080;
+  color: #ffffff;
+  width: 49%;
+  margin: 10px 0;
+  padding: 5px 0;
+  display: inline-block;
+  text-align: center;
+}
+#works .swiper-slide .webInfo a:first-of-type {
+  margin-right: 1%;
+}
+#works .swiper-slide .webInfo a:last-of-type {
+  margin-left: 1%;
+}
+#works .swiper-slide .webInfo a:hover {
+  color: #000080;
+  background-color: #1e90ff;
+}
 
 #conclusion {
   width: calc(100% - 100px);
@@ -494,7 +555,7 @@ ul.headerSub li {
   padding: 50px;
   padding-top: 100px;
   position: relative;
-  background-image: url("../images/imageConclusion.jpg");
+  background-image: url("../images/backgroundImgs/imageConclusion.jpg");
   background-size: cover;
   background-position: right 0 bottom 50%;
   display: flex;
@@ -526,6 +587,9 @@ ul.headerSub li {
 #conclusion .closing p {
   font-size: 2em;
 }
+#conclusion .closing p img {
+  width: 30%;
+}
 #conclusion .closing ul li:first-child {
   font-size: 3.5em;
 }
@@ -550,7 +614,7 @@ ul.headerSub li {
 #conclusion .contactPop {
   position: absolute;
   bottom: 0px;
-  width: 45%;
+  width: 50%;
 }
 #conclusion .contactPop li {
   position: absolute;
@@ -562,6 +626,20 @@ ul.headerSub li {
   border-radius: 20px;
   text-align: center;
   top: 0;
+  cursor: pointer;
+}
+#conclusion .contactPop li:hover {
+  font-weight: bold;
+}
+#conclusion .contactPop li span {
+  background-color: #000080;
+}
+#conclusion .contactPop li span img {
+  width: 20px;
+}
+#conclusion .contactPop li span:last-child {
+  opacity: 0;
+  display: none;
 }
 
 #changingLanguage {
@@ -638,7 +716,8 @@ ul.headerSub li {
   #works .swiper-slide {
     flex-direction: column;
   }
-  #works .swiper-slide .webpageFrame {
+  #works .swiper-slide .webpageFrame,
+  #works .swiper-slide .webInfo {
     height: 50%;
     width: 100%;
   }
@@ -674,9 +753,11 @@ ul.headerSub li {
   }
   #works .swiper-slide {
     flex-direction: row;
+    justify-content: space-between;
   }
-  #works .swiper-slide .webpageFrame {
+  #works .swiper-slide .webpageFrame,
+  #works .swiper-slide .webInfo {
     height: 100%;
-    width: 50%;
+    width: 45%;
   }
 }

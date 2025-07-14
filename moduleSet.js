@@ -13,6 +13,9 @@ import skills from './datas/skills.js';
 // Backend 경력
 import backendWorks from "./datas/backendWorks.js";
 
+// Frontend & Webdesign 경력
+import webWorks from "./datas/webWorks.js";
+
 // 프로필
 import profile from './datas/profile.js';
 
@@ -41,23 +44,33 @@ jQuery(document).ready(function(){
         }
     }
 
+    // 방문지 swiper
+    var swiper = new Swiper(".visitSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      grabCursor: true
+    });
+
     // skills
     let skillList = $('.popSkills ul');
     for(let skill of skills) {
-        let oneSkill = '<li><div class=' + skill.skillType + '>';
-        oneSkill += '<img src="./images/logos/'+ skill.skillName +'.png" alt="' + skill.skillType + '">';
-        oneSkill += '</div></li>';
-        $(oneSkill).appendTo(skillList);
+        if (skill.skillType != 'api') {
+            let oneSkill = '<li><div class=' + skill.skillType + '>';
+            oneSkill += '<img src="./images/logosIT/'+ skill.skillName +'.png" alt="' + skill.skillType + '">';
+            oneSkill += '</div></li>';
+            $(oneSkill).appendTo(skillList);
+        }
+        
     }
 
     // Backend 경력
-    // console.log(backendWorks);
     let backendPop = $('.popBackend');
     for (let language of arrayLanguage) {
         let backendForm = '<div class="backendForm ' + language + '">'
         let backendList = '<ul>';
 
         for (let oneProject of backendWorks) {
+            // Backend 기본 내용
             let projectDetail = '<li>';
             let projectName = '';
             let projectRole = '';
@@ -67,7 +80,7 @@ jQuery(document).ready(function(){
                 case 'kor':
                     projectName = '<h3>' + oneProject.projectsName.nameKor + '</h3>';
                     projectRole = '<p>역할: ' + oneProject.role.roleKor + '</p>';
-                    projectPlace = '<p>' + oneProject.place.placeKor + '</p>';
+                    projectPlace = '<p>실시 기관:' + oneProject.place.placeKor + '</p>';
                     break;
 
                 case 'eng':
@@ -82,18 +95,95 @@ jQuery(document).ready(function(){
                     projectPlace = '<p>実施機関: ' + oneProject.place.placeJpn + '</p>';
                     break;
             }
+            // Backend 언어
+            let projectLanguage = '<ul>';
+            for (let onePL of oneProject.language){
+                projectLanguage += '<li><img src="./images/logosIt/'
+                    + onePL +
+                    '.png" alt="backendLang"></li>'
+            }
+            projectLanguage += '</ul>';
 
-            
+            // Backend Tool
+            let projectTool = '<ul>';
+            for (let onePT of oneProject.tool){
+                projectTool += '<li><img src="./images/logosIt/'
+                    + onePT +
+                    '.png" alt="backendTool"></li>'
+            }
+            projectTool += '</ul>';
 
-            projectDetail +=  projectName + projectRole + projectPlace + '</li>'
+            projectDetail +=  projectName + projectRole + projectPlace + projectLanguage + projectTool + '</li>'
             backendList += projectDetail;
         }
-
 
         backendForm += backendList + '</ul></div>'
         $(backendForm).appendTo(backendPop);
     }
     
+    // Web design, Frontend 
+    let frontWeb = $('#works>.worksSwiper>.swiper-wrapper');
+    for (let oneWebInfo of webWorks) {
+        // console.log(oneWebInfo);
+        let oneWeb = '<div class="swiper-slide">';
+        // webpage image
+        oneWeb += '<div class="webpageFrame">';
+        oneWeb += '<img src="images/works/' + oneWebInfo.pageImg + '" alt="webDesignPage">';
+        oneWeb += '</div>';
+
+        // webpage info
+        oneWeb += '<div class="webInfo">'
+        oneWeb += '<img src="images/logosProject/' + oneWebInfo.projectLogo + '" alt="webDesignLogo">';
+        
+        oneWeb += '<h3 class="kor">' + oneWebInfo.projectSummary.summaryKor + '</h3>';
+        oneWeb += '<h3 class="eng">' + oneWebInfo.projectSummary.summaryEng + '</h3>';
+        oneWeb += '<h3 class="jpn">' + oneWebInfo.projectSummary.summaryJpn + '</h3>';
+        
+        oneWeb += '<p class="kor">담당 역할:' + oneWebInfo.role.roleKor + '</p>';
+        oneWeb += '<p class="eng">role:' + oneWebInfo.role.roleEng + '</p>';
+        oneWeb += '<p class="jpn">役割:' + oneWebInfo.role.roleJpn + '</p>';
+
+        oneWeb += '<p class="kor">실시 기관:' + oneWebInfo.place.placeKor + '</p>';
+        oneWeb += '<p class="eng">place' + oneWebInfo.place.placeEng + '</p>';
+        oneWeb += '<p class="jpn">実施機関:' + oneWebInfo.place.placeJpn + '</p>';
+
+        oneWeb += '<ul>'
+        for (let onePL of oneWebInfo.language){
+            oneWeb += '<li><img src="./images/logosIt/'
+                + onePL +
+                '.png" alt="webLang"></li>'
+        }
+        
+        oneWeb += '</ul>'
+
+        oneWeb += '<a href="' + oneWebInfo.url + '" target="_blank">';
+        oneWeb += 'To Webpage';
+        oneWeb += '</a>';
+        oneWeb += '<a class="kor" href="#" target="_blank">';
+        oneWeb += 'ToDocument';
+        oneWeb += '</a>';
+
+        oneWeb += '<p class="explain kor">';
+        oneWeb += oneWebInfo.explain.explainKor;
+        oneWeb += '</p>';
+        oneWeb += '<p class="explain eng">';
+        oneWeb += oneWebInfo.explain.explainEng;
+        oneWeb += '</p>';
+        oneWeb += '<p class="explain jpn">';
+        oneWeb += oneWebInfo.explain.explainJpn;
+        oneWeb += '</p>';
+
+        oneWeb += '</div></div>'
+        $(oneWeb).appendTo(frontWeb);
+    }
+    
+    // webWork Swiper
+    var swiper = new Swiper(".worksSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      grabCursor: true
+    });
     
     // 프로필
     // 학력 & 경력

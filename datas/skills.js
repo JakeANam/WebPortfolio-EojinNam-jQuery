@@ -12,7 +12,7 @@ const skills =[
         "skillType": "frontend"
     },
     {
-        "skillName": "sass",
+        "skillName": "scss",
         "skillType": "frontend"
     },
     {
@@ -125,6 +125,11 @@ const skills =[
     {
         "skillName": "roboflow",
         "skillType": "programmingTools"
+    }
+    ,
+    {
+        "skillName": "kakao",
+        "skillType": "api"
     }
 ]
 
