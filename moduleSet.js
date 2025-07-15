@@ -98,7 +98,7 @@ jQuery(document).ready(function(){
             // Backend 언어
             let projectLanguage = '<ul>';
             for (let onePL of oneProject.language){
-                projectLanguage += '<li><img src="./images/logosIt/'
+                projectLanguage += '<li><img src="./images/logosIT/'
                     + onePL +
                     '.png" alt="backendLang"></li>'
             }
@@ -107,7 +107,7 @@ jQuery(document).ready(function(){
             // Backend Tool
             let projectTool = '<ul>';
             for (let onePT of oneProject.tool){
-                projectTool += '<li><img src="./images/logosIt/'
+                projectTool += '<li><img src="./images/logosIT/'
                     + onePT +
                     '.png" alt="backendTool"></li>'
             }
