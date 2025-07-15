@@ -17,7 +17,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject1-playeRC/",
-        document:"https://jakeanam.github.io/UIUXProject1-playeRC/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B81.pdf",
+        document:"https://jakeanam.github.io/UIUXProject1-playeRC/projectDocument1.pdf",
         pageImg: "jakeanam.github.io_UIUXProject1-playeRC_.png",
         language: ["javascript","jQuery","html","css"],
         explain: {
@@ -44,7 +44,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject2-FedEx-new/",
-        document:"https://jakeanam.github.io/UIUXProject2-FedEx-new/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B82.pdf",
+        document:"https://jakeanam.github.io/UIUXProject2-FedEx-new/projectDocument2.pdf",
         pageImg: "jakeanam.github.io_UIUXProject2-FedEx-new_.png",
         language: ["javascript","jQuery","html","css"],
         explain: {
@@ -71,7 +71,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject3-BUKSTOR/",
-        document:"https://jakeanam.github.io/UIUXProject3-BUKSTOR/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B83.pdf",
+        document:"https://jakeanam.github.io/UIUXProject3-BUKSTOR/projectDocument3.pdf",
         pageImg: "jakeanam.github.io_UIUXProject3-BUKSTOR_.png",
         language: ["javascript","html","scss","swiper","kakao"],
         explain: {
@@ -98,7 +98,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject4-SJLS/",
-        
+        document: "https://jakeanam.github.io/UIUXProject4-SJLS/projectDocument4.pdf",
         pageImg: "jakeanam.github.ioUIUXProject4-SJLS.png",
         language: ["react","reactBootstrap","redux","axios","javascript","nodejs","scss","swiper"],
         explain: {
@@ -125,6 +125,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jalgaram.github.io/parket/",
+        document: "https://jalgaram.github.io/parket/Parket.pdf",
         pageImg: "jalgaram.github.io_parket_.png",
         language: ["react","reactBootstrap","redux","axios","javascript","nodejs","scss","swiper"],
         explain: {
