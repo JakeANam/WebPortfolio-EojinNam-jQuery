@@ -149,7 +149,7 @@ jQuery(document).ready(function(){
 
         oneWeb += '<ul>'
         for (let onePL of oneWebInfo.language){
-            oneWeb += '<li><img src="./images/logosIt/'
+            oneWeb += '<li><img src="./images/logosIT/'
                 + onePL +
                 '.png" alt="webLang"></li>'
         }
