@@ -73,7 +73,7 @@ const backendWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         language: ["python","javascript","html","css","springBoot"],
-        tool: ["pycharm","inteliJ","roboflow","googleColab"]
+        tool: ["pyCharm","inteliJ","roboflow","googleColab"]
     },
     {
         projectsName:{
@@ -92,7 +92,7 @@ const backendWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         language: ["python","javascript","html","css","oracle","springBoot"],
-        tool: ["pycharm","inteliJ","roboflow"]
+        tool: ["pyCharm","inteliJ","roboflow"]
 
     }
 ];
