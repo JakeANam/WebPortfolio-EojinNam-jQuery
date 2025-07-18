@@ -1,17 +1,16 @@
 const arrayLanguage = ['kor', 'eng', 'jpn'];
 let pageNum = 0;
-
 let systemLanguage = '';
 let clickedY = 0;
 let canScroll = false;
 let clickedURL = '';
 
 // jQuery
-jQuery(document).ready(function() {
+jQuery(document).ready(function() {  
     // 헤더 메뉴 버튼
     $('.headerButton').click(function() {
         let submenu = $('.headerSub');
-        if (submenu.css('top') == '0px'){
+        if (submenu.css('top') == '0px') {
             submenu.animate({'top':'50px'});
         } else {
             submenu.animate({'top':'0px'});
@@ -48,7 +47,7 @@ jQuery(document).ready(function() {
 
         // http URL이면 페이지 이동
         if (contentURL.indexOf('https://') >= 0) {
-            setTimeout(function(){
+            setTimeout(function() {
                 window.open(contentURL);
             }, 1000)
             
@@ -56,7 +55,7 @@ jQuery(document).ready(function() {
             navigator.clipboard.writeText(contentURL);
         }
 
-        $(this).children().eq(1).animate({'opacity':'0'}, function(){
+        $(this).children().eq(1).animate({'opacity':'0'}, function() {
             $(this).css('display','none').next()
                 .css('display','inline-block')
                 .animate({'opacity':'1'}, function() {
@@ -72,18 +71,43 @@ jQuery(document).ready(function() {
     // 팝업 닫기
     $('.closePop').click(function() {
         let popup = $(this).parent().parent();
-        popup.animate({'opacity':'0', 'left':'0'},function() {
+        popup.animate({'opacity':'0', 'left':'0'}, function() {
             popup.hide();
             popup.css({'left':'100%'})
         })
+    });
+
+
+
+
+    // console.log(window.scrollY != 0);
+    //     window.scrollY = 0;
+    //     if (window.scrollY != 0) {
+    //         $('body').css('top', window.scrollY + 'px')
+    //     }
+    // window.addEventListener("pageshow",function(){
         
+        
+    //     // if (window.scrollY != 0) {
+    //     //     window.scrollY = 0;
+    //     // }
+    // })
+    
+    // window.location.reload();
+
+    // 마우스 휠 액션: 팝업 위에서는 X
+    $('#about>div:not(.mainImg), #works .worksSwiper').mouseenter(function() {
+        //console.log('스크롤 X')
+        canScroll = false;
+    }).mouseleave(function() {
+        //console.log('스크롤 O')
+        canScroll = true;
     });
 
     // 브라우저 화면 크기 변경
     $(window).resize(function() {
         resetElementSize();
     });
-
 });
 
 // 화면 크기에 따라 요소 너비 설정
@@ -93,9 +117,8 @@ function resetElementSize() {
     visitImage.width(visitImage.height() / 3 * 4);
 
     // skill 크기 설정
-    let skillsCell = $('.popSkills ul>li');
-    let skillsFrame = skillsCell.children();
-    // let skillsImg = skillsFrame.children()
+    let skillsCell = $('#about .popSkills ul>li');
+    let skillsFrame = skillsCell.children(); // li>div
     // 세로로 긴 화면: 높이가 너비보다 더 큰 값
     if (skillsCell.height() > skillsCell.width()) {
         skillsFrame.height(skillsCell.width() - 20);
@@ -109,7 +132,7 @@ function resetElementSize() {
     for (let i = 0; i < skillsFrame.length; i++) {
         let skillsImg = skillsFrame.children(":eq("+ i +")");
         
-        if(skillsImg.width() >= skillsImg.height()) {
+        if (skillsImg.width() >= skillsImg.height()) {
             skillsImg.width('90%');
             skillsImg.height('auto');
         } else {
@@ -117,18 +140,34 @@ function resetElementSize() {
             skillsImg.width('auto');
         }
     }
+
+    // Backend & Frontend Language, Tool Img
+    let projectLang = $('.projectLanguage>li');
+
+    for (let oneTool of projectLang) {
+        let toolImage = $(oneTool).children();
+        // console.log(toolImage);
+        if (toolImage.width() >= toolImage.height()) {
+            toolImage.width('90%');
+            toolImage.height('auto');
+        } else {
+            toolImage.height('90%');
+            toolImage.width('auto');
+        }
+    }
 }
 
 // 첫 화면 언어 선택
 function chooseLanguageFirst(lang) {
     systemLanguage = lang;
-    for (thatLang of arrayLanguage){
-            if(thatLang == lang){
+    for (thatLang of arrayLanguage) {
+            if (thatLang == lang) {
                 $('*.' + thatLang).show();   
             } else {
                 $('*.' + thatLang).hide();   
             }
         }
+    resetElementSize();
     $('#selectLanguage').slideUp(1000);
     $('header').delay(1000).animate({'top':'0'});
     $('.headerSub').delay(1000).animate({'top':'0'});
@@ -144,8 +183,9 @@ function startIntroAnimation() {
         .animate({'opacity':'1','left':'0'});
     $('#introduction .introSlide').delay(3000)
         .animate({'opacity':'0.9'});
+    canScroll = !canScroll;
 
-    setInterval(function(){
+    setInterval(function() {
         let introSlide = $('#introduction .introSlide');
         let slideWidth = introSlide.children().width();
 
@@ -155,6 +195,7 @@ function startIntroAnimation() {
             function() {
                 introSlide.css('left','0');
                 introSlide.append($(introSlide).children(':first'));
+                
             }
         );
     }, 0);
@@ -165,6 +206,12 @@ function stopIntroAnimation() {
 
 }
 
+// 헤더 메뉴로 페이지 이동
+function scrollByHeader(toMovePage) {
+    scrollAction(toMovePage);
+    $('.headerSub').animate({'top':'0'})
+}
+
 // 자기소개 팝업 열기
 function openAboutPop(className) {
     $('.' + className).show();
@@ -172,65 +219,76 @@ function openAboutPop(className) {
     resetElementSize();
 }
 
-/*
-document.addEventListener('wheel',function(event) {
+// 스크롤
+document.addEventListener('wheel', function(event) {
     goScroll(event,clickedY);
-    console.log(event);
-    // alert('yo')
-    console.log(event.deltaY)
-    // 스크롤 아래
-    if (event.deltaY > 0) {
-        $('body').animate({'margin-top':'-100vh'})
-
-    } 
-});
-document.addEventListener('mousedown', function(event) {
-    clickedY = event.clientY;
 });
 
-document.addEventListener('mouseup', function(event) {
+document.addEventListener('keyup', function(event) {
+    console.log(event.key)
     goScroll(event,clickedY);
 });
 
 function goScroll(event, clickedY) {
-    if(!($('#selectLanguage').is(':visible'))) {
-        let currentY = $('body').css('top');
-        console.log(currentY)
+    if (!($('#selectLanguage').is(':visible'))) {
+        
         if (event.type == 'wheel') {
             // 아래 스크롤
-            if (event.deltaY > 0 ) {
-                currentY -= window.innerHeight;
-                console.log('scrollDown');
-                $('body').animate({'top':  + currentY + 'px'})
+            if (event.deltaY > 0 && pageNum < 3 && canScroll) {
+                // console.log('scrollDown')
+                ++pageNum;
+                canScroll = !canScroll;
+                
             // 위 스크롤
-            } else if (currentY < 0) {
-                currentY += window.innerHeight;
-                $('body').animate({'top':currentY + 'px'})
+            } else if (event.deltaY < 0 && pageNum > 0 && canScroll) {
+                // console.log('scrollUp');
+                pageNum -= 1;
+                canScroll = !canScroll;
             }
-        } else {
-            // 아래 드래그
-            if (clickedY > event.clientY) {
-                console.log('scrollDown');
-            // 드래그 X
-            } else if (clickedY== event.clientY) {
-                console.log('NoScroll');
-            // 위 드래그
-            } else {
-                console.log('scrollUp');
-            }
+        } else if (event.key == 'ArrowDown' && pageNum < 3) {
+            console.log('downkey');
+            ++pageNum;
+            canScroll = !canScroll;
+
+        } else if (event.key == 'ArrowUp' && pageNum > 0) {
+            console.log('upkey');
+            pageNum -= 1;
+            canScroll = !canScroll;
         }
+
+        scrollAction(pageNum);
+        // let windowHight = window.innerHeight;
+        // $('#wrap').animate(
+        //        {'top':  + ( -1 * pageNum * windowHight) + 'px'}, function() {
+        //        canScroll = !canScroll;
+        //    });
+        // $('header .headerButton').animate({'top':( -100 * pageNum ) + '%'});
     }
 }
-*/
+
+function scrollAction(pageNum) {
+    let windowHight = window.innerHeight;
+    $('#wrap').animate(
+        {'top':  + ( -1 * pageNum * windowHight) + 'px'}, function() {
+            canScroll = !canScroll;
+        });
+    $('header .headerButton').animate({'top':( -100 * pageNum ) + '%'});
+}
+// 새로고침 할 때 맨 위로 스크롤
+window.addEventListener("beforeunload", function(event){
+    $('#wrap').css('top','0');
+    this.window.scrollTo(0, 0);
+});
 
 // 언어 바꾸기
 function changeLanguage(lang) {
     $('#changingLanguage .' + lang)
         .show().stop().animate({
             'marginLeft':'-100%'
-    }, 500, function(){
-        for (thatLang of arrayLanguage){
-            if(thatLang == lang){
+    }, 500, function() {
+        resetElementSize();
+        for (thatLang of arrayLanguage) {
+            if (thatLang == lang) {
                 $('*.' + thatLang).show();   
             } else {
                 $('*.' + thatLang).hide();   
@@ -238,9 +296,7 @@ function changeLanguage(lang) {
         }
     }).delay(50).animate({
         'marginLeft':'-200%'
-    }, 500, function(){
+    }, 500, function() {
         $(this).css('marginLeft','0%');
     });
-
 }
-

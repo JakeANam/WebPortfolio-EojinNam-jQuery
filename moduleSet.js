@@ -65,61 +65,57 @@ jQuery(document).ready(function(){
 
     // Backend 경력
     let backendPop = $('.popBackend');
-    for (let language of arrayLanguage) {
-        let backendForm = '<div class="backendForm ' + language + '">'
-        let backendList = '<ul>';
+    let backendForm = '<div class="backendForm ">'
+    let backendList = '<ul>';
 
-        for (let oneProject of backendWorks) {
-            // Backend 기본 내용
-            let projectDetail = '<li>';
-            let projectName = '';
-            let projectRole = '';
-            let projectPlace = '';
+    for (let oneProject of backendWorks) {
+        // Backend 기본 내용
+        let projectDetail = '<li>';
 
+        for (let language of arrayLanguage) {
             switch (language) {
                 case 'kor':
-                    projectName = '<h3>' + oneProject.projectsName.nameKor + '</h3>';
-                    projectRole = '<p>역할: ' + oneProject.role.roleKor + '</p>';
-                    projectPlace = '<p>실시 기관:' + oneProject.place.placeKor + '</p>';
+                    projectDetail += '<h3 class="' + language + '">' + oneProject.projectsName.nameKor + '</h3>';
+                    projectDetail += '<p class="' + language + '">역할: ' + oneProject.role.roleKor + '</p>';
+                    projectDetail += '<p class="' + language + '">실시 기관:' + oneProject.place.placeKor + '</p>';
                     break;
 
                 case 'eng':
-                    projectName = '<h3>' + oneProject.projectsName.nameEng + '</h3>';
-                    projectRole = '<p>role: ' + oneProject.role.roleEng + '</p>';
-                    projectPlace = '<p>place: ' + oneProject.place.placeEng + '</p>';
+                    projectDetail += '<h3 class="' + language + '">' + oneProject.projectsName.nameEng + '</h3>';
+                    projectDetail += '<p class="' + language + '">role: ' + oneProject.role.roleEng + '</p>';
+                    projectDetail += '<p class="' + language + '">place: ' + oneProject.place.placeEng + '</p>';
                     break;
 
                 case 'jpn':
-                    projectName = '<h3>' + oneProject.projectsName.nameJpn + '</h3>';
-                    projectRole = '<p>役割: ' + oneProject.role.roleJpn + '</p>';
-                    projectPlace = '<p>実施機関: ' + oneProject.place.placeJpn + '</p>';
+                    projectDetail += '<h3 class="' + language + '">' + oneProject.projectsName.nameJpn + '</h3>';
+                    projectDetail += '<p class="' + language + '">役割: ' + oneProject.role.roleJpn + '</p>';
+                    projectDetail += '<p class="' + language + '">実施機関: ' + oneProject.place.placeJpn + '</p>';
                     break;
             }
-            // Backend 언어
-            let projectLanguage = '<ul>';
-            for (let onePL of oneProject.language){
-                projectLanguage += '<li><img src="./images/logosIT/'
-                    + onePL +
-                    '.png" alt="backendLang"></li>'
-            }
-            projectLanguage += '</ul>';
-
-            // Backend Tool
-            let projectTool = '<ul>';
-            for (let onePT of oneProject.tool){
-                projectTool += '<li><img src="./images/logosIT/'
-                    + onePT +
-                    '.png" alt="backendTool"></li>'
-            }
-            projectTool += '</ul>';
-
-            projectDetail +=  projectName + projectRole + projectPlace + projectLanguage + projectTool + '</li>'
-            backendList += projectDetail;
+        }
+        
+        // Backend 언어
+        let projectLanguage = '<ul class="projectLanguage">';
+        for (let onePL of oneProject.language){
+            projectLanguage += '<li><img src="./images/logosIT/'
+                + onePL +
+                '.png" alt="backendLang"></li>'
         }
 
-        backendForm += backendList + '</ul></div>'
-        $(backendForm).appendTo(backendPop);
+        for (let onePT of oneProject.tool){
+            projectLanguage += '<li><img src="./images/logosIT/'
+                + onePT +
+                '.png" alt="backendTool"></li>'
+        }
+
+        projectLanguage += '</ul>';
+
+        projectDetail +=  /*projectName + projectRole + projectPlace +*/ projectLanguage + '</li>'
+        backendList += projectDetail;
     }
+
+    backendForm += backendList + '</ul></div>'
+    $(backendForm).appendTo(backendPop);
     
     // Web design, Frontend 
     let frontWeb = $('#works>.worksSwiper>.swiper-wrapper');
@@ -147,7 +143,7 @@ jQuery(document).ready(function(){
         oneWeb += '<p class="eng">place' + oneWebInfo.place.placeEng + '</p>';
         oneWeb += '<p class="jpn">実施機関:' + oneWebInfo.place.placeJpn + '</p>';
 
-        oneWeb += '<ul>'
+        oneWeb += '<ul class="projectLanguage">'
         for (let onePL of oneWebInfo.language){
             oneWeb += '<li><img src="./images/logosIT/'
                 + onePL +

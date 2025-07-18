@@ -39,6 +39,20 @@ export const profile = [
         ],
         workExperience: [
             {
+                duration: "2019년 10월 ~ 2020년 4월",
+                companyName: "예수그리스도 후기성도교회 오스트레일리아 시드니 선교부",
+                position: "청년 전임 선교사",
+                location: "시드니 뉴사우스웨일스",
+                country: "aus"
+            },
+             {
+                duration: "2020년 5월 ~ 2021년 11월",
+                companyName: "예수그리스도 후기성도교회 한국 서울 선교부",
+                position: "청년 전임 선교사",
+                location: "서울",
+                country: "kor"
+            },
+            {
                 duration: "2024년 5월 ~ 2024년 10월",
                 companyName: "SY systems co. inc.",
                 position: "소프트웨어엔지니어",
@@ -92,7 +106,7 @@ export const profile = [
             },
             {
                 duration: "March 2022 ~ November 2022",
-                schoolName: "JSL Human Resource Development Cente",
+                schoolName: "JSL Human Resource Development Center",
                 courseName: "Hybrid Software Advance Course for Japanese employment",
                 location: "Daejeon",
                 country: "kor"
@@ -113,6 +127,20 @@ export const profile = [
             }
         ],
         workExperience: [
+            {
+                duration: "October 2019 ~ April 2020",
+                companyName: "The Church of Jesus Christ of Latter-day Saints, Australia Sydney Mission",
+                position: "Full-time missionary",
+                location: "Sydney, NSW",
+                country: "aus"
+            },
+             {
+                duration: "May 2020 ~ November 2021",
+                companyName: "The Church of Jesus Christ of Latter-day Saints, Korea Seoul Mission",
+                position: "Full-time missionary",
+                location: "Seoul",
+                country: "kor"
+            },
             {
                 duration: "May 2024 ~ October 2024",
                 companyName: "SY systems co. inc.",
@@ -188,6 +216,20 @@ export const profile = [
             }
         ],
         workExperience: [
+            {
+                duration: "令和元年 10月 ~ 令和2年 4月",
+                companyName: "末日聖徒イエス・キリスト教会、オーストラリアオーストラリア シドニー 伝導部",
+                position: "専任宣教師",
+                location: "ニューサウスウェールズ州、シドニー",
+                country: "aus"
+            },
+             {
+                duration: "令和2年 5月 ~ 令和3年 11月",
+                companyName: "末日聖徒イエス・キリスト教会、韓国 ソウル 伝導部",
+                position: "専任宣教師",
+                location: "ソウル",
+                country: "kor"
+            },
             {
                 duration: "令和6年 5月 ~ 令和6年 10月",
                 companyName: "株式会社エスワイシステム",

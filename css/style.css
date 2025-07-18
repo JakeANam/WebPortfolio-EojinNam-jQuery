@@ -12,7 +12,13 @@ a {
 }
 
 body {
+  overflow: hidden;
   position: relative;
+}
+body #wrap {
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 #selectLanguage {
@@ -28,6 +34,7 @@ body {
 }
 #selectLanguage div {
   display: flex;
+  position: absolute;
 }
 #selectLanguage div a {
   display: flex;
@@ -45,6 +52,7 @@ header {
   z-index: 4;
   display: flex;
   position: fixed;
+  overflow: hidden;
   justify-content: space-between;
   background-color: #f5f5dd;
 }
@@ -53,7 +61,7 @@ header ul {
 }
 header ul.headerButton {
   flex-direction: column;
-  overflow: hidden;
+  position: relative;
   line-height: 50px;
   height: 50px;
 }
@@ -72,7 +80,6 @@ header .headerLanguage a, header .headerLanguage img {
 
 ul.headerSub {
   background-color: #1e90ff;
-  color: #ffffff;
   position: fixed;
   width: calc(100% - 100px);
   display: flex;
@@ -86,6 +93,9 @@ ul.headerSub li {
   width: 25%;
   text-align: center;
   cursor: pointer;
+}
+ul.headerSub li a {
+  color: #ffffff;
 }
 
 #introduction {
@@ -323,51 +333,63 @@ ul.headerSub li {
   background-color: #1e90ff;
   color: #000080;
 }
-#about .popExperience div,
-#about .popBackend div {
+#about .popExperience > div,
+#about .popBackend > div {
   padding: 30px;
 }
-#about .popExperience div > ul,
-#about .popBackend div > ul {
+#about .popExperience > div > ul,
+#about .popBackend > div > ul {
   padding-left: 20px;
   padding-bottom: 30px;
 }
-#about .popExperience div > ul > li,
-#about .popBackend div > ul > li {
+#about .popExperience > div > ul > li,
+#about .popBackend > div > ul > li {
   margin-bottom: 20px;
 }
-#about .popExperience div > ul > li > h3,
-#about .popBackend div > ul > li > h3 {
+#about .popExperience > div > ul > li > h3,
+#about .popBackend > div > ul > li > h3 {
   margin-left: -20px;
 }
-#about .popExperience div > ul > li p,
-#about .popBackend div > ul > li p {
+#about .popExperience > div > ul > li p,
+#about .popBackend > div > ul > li p {
   font-size: 1.2em;
   height: 30px;
   display: flex;
   align-items: center;
 }
-#about .popExperience div > ul > li p span,
-#about .popBackend div > ul > li p span {
+#about .popExperience > div > ul > li p span,
+#about .popBackend > div > ul > li p span {
   display: flex;
   align-items: center;
+  color: #555555;
+  font-size: 0.9em;
+  margin-left: 10px;
 }
-#about .popExperience div > ul > li img,
-#about .popBackend div > ul > li img {
-  display: inline-block;
+#about .popExperience > div > ul > li p img,
+#about .popBackend > div > ul > li p img {
   height: 30px;
+  margin-left: 15px;
 }
-#about .popExperience div > ul > li > ul,
-#about .popBackend div > ul > li > ul {
+#about .popExperience > div > ul > li > ul,
+#about .popBackend > div > ul > li > ul {
   display: flex;
 }
-#about .popExperience div > ul > li > ul > li,
-#about .popBackend div > ul > li > ul > li {
+#about .popExperience > div > ul > li > ul > li,
+#about .popBackend > div > ul > li > ul > li {
   padding: 0 5px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#about .popExperience div > ul > li > ul > li:first-child,
-#about .popBackend div > ul > li > ul > li:first-child {
+#about .popExperience > div > ul > li > ul > li:first-child,
+#about .popBackend > div > ul > li > ul > li:first-child {
   padding-left: 0;
+}
+#about .popExperience > div > ul > li > ul > li img,
+#about .popBackend > div > ul > li > ul > li img {
+  display: inline-block;
 }
 #about .popExperience.popExperience ul:nth-of-type(2) p:nth-of-type(2),
 #about .popBackend.popExperience ul:nth-of-type(2) p:nth-of-type(2) {
@@ -522,7 +544,11 @@ ul.headerSub li {
 }
 #works .swiper-slide .webInfo ul li {
   height: 75px;
+  width: 75px;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #works .swiper-slide .webInfo ul li img {
   display: block;
