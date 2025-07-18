@@ -19,7 +19,57 @@ import webWorks from "./datas/webWorks.js";
 // 프로필
 import profile from './datas/profile.js';
 
+// 안내 팝업
+import noticeContent from "./datas/noticeContent.js";
+
 jQuery(document).ready(function(){
+    // 첫 화면 안내 팝업
+    let introPop = '';
+    let contentToUse;
+    for (let oneLang of arrayLanguage) {
+        introPop = '<ul class="' + oneLang + '">'
+        switch (oneLang) {
+            case 'kor': 
+                contentToUse = noticeContent.onIntroduction.introKor;
+                break;
+
+            case 'eng': 
+                contentToUse = noticeContent.onIntroduction.introEng;
+                break;
+
+            case 'jpn': 
+                contentToUse = noticeContent.onIntroduction.introJpn;
+                break;
+        }
+
+        for (let i in contentToUse) {
+            console.log(i)
+            if (i == 2) {
+                introPop += '<li>' + contentToUse[i];
+                for (let country of contries) {
+                    let isSameCode = country.countryCode3 == contentToUse[Number(i) + 1];
+                    if (isSameCode) {
+                        introPop += '<img src="./images/' + country.countryFlag + '">';
+                        break;
+
+                    } else if (!isSameCode && i == contries.length - 1) {
+                        introPop += '<img src="./images/globe_Flag.jpg">';
+                    }
+                }
+                introPop += '</li>';
+                break;
+
+            } else {
+                introPop += '<li>' + contentToUse[i] + '</li>'
+            }
+        }
+
+        introPop += '</ul>';
+        $(introPop).appendTo('#introduction .noticeContent')
+    }
+
+    
+
     // 방문 지역 
     for(let area of visitedAreas) {
         let pictureSet;

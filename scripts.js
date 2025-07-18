@@ -176,13 +176,15 @@ function chooseLanguageFirst(lang) {
 
 // 첫 화면 애니메이션 실행
 function startIntroAnimation() {
-    let introLogo = $('#introduction p:last');
+    let introLogo = $('#introduction .greething p:last');
     introLogo.siblings().delay(1000)
         .animate({'opacity':'1','left':'0'});
     introLogo.delay(2000)
         .animate({'opacity':'1','left':'0'});
     $('#introduction .introSlide').delay(3000)
         .animate({'opacity':'0.9'});
+
+    $('#introduction .notice').delay(4000).animate({'bottom':'10%'});
     canScroll = !canScroll;
 
     setInterval(function() {

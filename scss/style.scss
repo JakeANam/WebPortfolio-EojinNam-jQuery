@@ -221,6 +221,53 @@ ul.headerSub {
             }
         }
     }
+
+    .notice {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 5px;
+        background-color: $blue3;
+        color: $whitePerfect;
+        text-align: center;
+        position: absolute;
+        cursor: pointer;
+        opacity: 1;
+        z-index: 4;
+        bottom: 100%;
+
+        &:hover {
+            background-color: $blue2;
+            color: $blue3;
+            + .noticeContent {
+                display: block;
+            }
+        }
+
+    }
+
+    .noticeContent{
+        position: absolute;
+        display: none;
+        width: 56%;
+        padding: 2%;
+        background-color: $blue3;
+        color: $whitePerfect;
+        z-index: 4;
+        bottom: calc(10% + 45px);
+        margin-left: 5px; 
+        
+        li {
+            display: flex;
+            padding: 5px 0;
+         
+            img {
+                height: 30px;
+                margin-left: 10px 
+            }
+        }
+        
+    }
 }
 
 // 자기소개
