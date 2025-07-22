@@ -74,33 +74,7 @@ jQuery(document).ready(function() {
         popup.animate({'opacity':'0', 'left':'0'}, function() {
             popup.hide();
             popup.css({'left':'100%'})
-        })
-    });
-
-
-
-
-    // console.log(window.scrollY != 0);
-    //     window.scrollY = 0;
-    //     if (window.scrollY != 0) {
-    //         $('body').css('top', window.scrollY + 'px')
-    //     }
-    // window.addEventListener("pageshow",function(){
-        
-        
-    //     // if (window.scrollY != 0) {
-    //     //     window.scrollY = 0;
-    //     // }
-    // })
-    
-    // window.location.reload();
-
-    // 마우스 휠 액션: 팝업 위에서는 X
-    $('#about>div:not(.mainImg), #works .worksSwiper').mouseenter(function() {
-        //console.log('스크롤 X')
-        canScroll = false;
-    }).mouseleave(function() {
-        //console.log('스크롤 O')
+        });
         canScroll = true;
     });
 
@@ -184,8 +158,10 @@ function startIntroAnimation() {
     $('#introduction .introSlide').delay(3000)
         .animate({'opacity':'0.9'});
 
-    $('#introduction .notice').delay(4000).animate({'bottom':'10%'});
-    canScroll = !canScroll;
+    $('#introduction .notice').delay(4000).animate({'bottom':'10%'}, function(){
+        canScroll = true;
+    });
+    
 
     setInterval(function() {
         let introSlide = $('#introduction .introSlide');
@@ -210,8 +186,11 @@ function stopIntroAnimation() {
 
 // 헤더 메뉴로 페이지 이동
 function scrollByHeader(toMovePage) {
+    pageNum = toMovePage;
     scrollAction(toMovePage);
-    $('.headerSub').animate({'top':'0'})
+    $('.headerSub').animate({'top':'0'}, function() {
+        canScroll = true;
+    })
 }
 
 // 자기소개 팝업 열기
@@ -219,62 +198,59 @@ function openAboutPop(className) {
     $('.' + className).show();
     $('.' + className).animate({opacity:'1',left: '50%'});
     resetElementSize();
+    canScroll = false;
 }
 
-// 스크롤
+// 마우스 휠로 스크롤
 document.addEventListener('wheel', function(event) {
-    goScroll(event,clickedY);
+    goScroll(event);
 });
 
+// 키보드로 스크롤
 document.addEventListener('keyup', function(event) {
-    console.log(event.key)
-    goScroll(event,clickedY);
+    // console.log(event.key)
+    goScroll(event);
 });
 
-function goScroll(event, clickedY) {
-    if (!($('#selectLanguage').is(':visible'))) {
-        
+function goScroll(event) {
+    // 스크롤할 수 있을 때 스크롤 실행
+    if (canScroll) {
         if (event.type == 'wheel') {
             // 아래 스크롤
-            if (event.deltaY > 0 && pageNum < 3 && canScroll) {
-                // console.log('scrollDown')
+            if (event.deltaY > 0 && pageNum < 3) {
+                console.log('scrollDown')
                 ++pageNum;
-                canScroll = !canScroll;
+                canScroll = false;
                 
             // 위 스크롤
-            } else if (event.deltaY < 0 && pageNum > 0 && canScroll) {
-                // console.log('scrollUp');
+            } else if (event.deltaY < 0 && pageNum > 0) {
+                console.log('scrollUp');
                 pageNum -= 1;
-                canScroll = !canScroll;
+                canScroll = false;
             }
         } else if (event.key == 'ArrowDown' && pageNum < 3) {
             console.log('downkey');
             ++pageNum;
-            canScroll = !canScroll;
+            canScroll = false;
 
         } else if (event.key == 'ArrowUp' && pageNum > 0) {
             console.log('upkey');
             pageNum -= 1;
-            canScroll = !canScroll;
+            canScroll = false;
         }
 
         scrollAction(pageNum);
-        // let windowHight = window.innerHeight;
-        // $('#wrap').animate(
-        //        {'top':  + ( -1 * pageNum * windowHight) + 'px'}, function() {
-        //        canScroll = !canScroll;
-        //    });
-        // $('header .headerButton').animate({'top':( -100 * pageNum ) + '%'});
     }
 }
 
+// 스크롤 애니메이션
 function scrollAction(pageNum) {
     let windowHight = window.innerHeight;
-    $('#wrap').animate(
+    $('#wrap').stop().animate(
         {'top':  + ( -1 * pageNum * windowHight) + 'px'}, function() {
-            canScroll = !canScroll;
+            canScroll = true;
         });
-    $('header .headerButton').animate({'top':( -100 * pageNum ) + '%'});
+    $('header .headerButton').stop().animate({'top':( -100 * pageNum ) + '%'});
 }
 // 새로고침 할 때 맨 위로 스크롤
 window.addEventListener("beforeunload", function(event){
@@ -284,6 +260,7 @@ window.addEventListener("beforeunload", function(event){
 
 // 언어 바꾸기
 function changeLanguage(lang) {
+    canScroll = false;
     $('#changingLanguage .' + lang)
         .show().stop().animate({
             'marginLeft':'-100%'
@@ -300,5 +277,7 @@ function changeLanguage(lang) {
         'marginLeft':'-200%'
     }, 500, function() {
         $(this).css('marginLeft','0%');
+        canScroll = true;
     });
+    
 }

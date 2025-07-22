@@ -43,7 +43,6 @@ jQuery(document).ready(function(){
         }
 
         for (let i in contentToUse) {
-            console.log(i)
             if (i == 2) {
                 introPop += '<li>' + contentToUse[i];
                 for (let country of contries) {
@@ -170,7 +169,6 @@ jQuery(document).ready(function(){
     // Web design, Frontend 
     let frontWeb = $('#works>.worksSwiper>.swiper-wrapper');
     for (let oneWebInfo of webWorks) {
-        // console.log(oneWebInfo);
         let oneWeb = '<div class="swiper-slide">';
         // webpage image
         oneWeb += '<div class="webpageFrame">';

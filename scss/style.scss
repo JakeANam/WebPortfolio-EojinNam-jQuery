@@ -312,25 +312,22 @@ ul.headerSub {
     // 팝업 열기
     .openPop {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-        li {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+        a {
+            width: 49%;
+            background-color: $blue3;
+            color: $whitePerfect;
+            margin: 10px 0;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 1.5em;
 
-            a {
-                width: 40%;
-                background-color: $blue3;
-                color: $whitePerfect;
-                margin: 10px 0;
-                text-align: center;
-                padding: 5px 0;
-                font-size: 1.5em;
-
-                &:hover {
-                    background-color: $blue2;
-                    color: $blue3;
-                }
+            &:hover {
+                background-color: $blue2;
+                color: $blue3;
             }
         }
     }
@@ -753,7 +750,6 @@ ul.headerSub {
     text-align: center;
     color: $whitePerfect;
     z-index: 10;
-    
 
     span {
         display: block;

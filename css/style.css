@@ -226,14 +226,12 @@ ul.headerSub li a {
 }
 #about .openPop {
   width: 100%;
-}
-#about .openPop li {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-#about .openPop li a {
-  width: 40%;
+#about .openPop a {
+  width: 49%;
   background-color: #000080;
   color: #ffffff;
   margin: 10px 0;
@@ -241,7 +239,7 @@ ul.headerSub li a {
   padding: 5px 0;
   font-size: 1.5em;
 }
-#about .openPop li a:hover {
+#about .openPop a:hover {
   background-color: #1e90ff;
   color: #000080;
 }
