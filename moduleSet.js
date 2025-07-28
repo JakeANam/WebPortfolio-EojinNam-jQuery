@@ -203,7 +203,7 @@ jQuery(document).ready(function(){
         oneWeb += '<a href="' + oneWebInfo.url + '" target="_blank">';
         oneWeb += 'To Webpage';
         oneWeb += '</a>';
-        oneWeb += '<a class="kor" href="#" target="_blank">';
+        oneWeb += '<a class="kor" href="' + oneWebInfo.document + '" target="_blank">';
         oneWeb += 'ToDocument';
         oneWeb += '</a>';
 
