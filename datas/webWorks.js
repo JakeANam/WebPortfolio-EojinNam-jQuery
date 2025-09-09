@@ -17,6 +17,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject1-playeRC/",
+        gitSource: "https://github.com/JakeANam/UIUXProject1-playeRC",
         document: "https://jakeanam.github.io/UIUXProject1-playeRC/projectDocument1.pdf",
         pageImg: "jakeanam.github.io_UIUXProject1-playeRC_.png",
         language: ["javascript","jQuery","html","css"],
@@ -44,6 +45,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject2-FedEx-new/",
+        gitSource: "https://github.com/JakeANam/UIUXProject2-FedEx-new",
         document: "https://jakeanam.github.io/UIUXProject2-FedEx-new/projectDocument2.pdf",
         pageImg: "jakeanam.github.io_UIUXProject2-FedEx-new_.png",
         language: ["javascript","jQuery","html","css"],
@@ -71,6 +73,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject3-BUKSTOR/",
+        gitSource: "https://github.com/JakeANam/UIUXProject3-BUKSTOR",
         document: "https://jakeanam.github.io/UIUXProject3-BUKSTOR/projectDocument3.pdf",
         pageImg: "jakeanam.github.io_UIUXProject3-BUKSTOR_.png",
         language: ["javascript","html","scss","swiper","kakao"],
@@ -98,6 +101,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jakeanam.github.io/UIUXProject4-SJLS/",
+        gitSource: "https://github.com/JakeANam/UIUXProject4-SJLS",
         document: "https://jakeanam.github.io/UIUXProject4-SJLS/projectDocument4.pdf",
         pageImg: "jakeanam.github.ioUIUXProject4-SJLS.png",
         language: ["react","reactBootstrap","redux","axios","javascript","nodejs","scss","swiper"],
@@ -125,6 +129,7 @@ const webWorks = [
             placeJpn: "MBCアカデミーコンピューター"
         },
         url: "https://jalgaram.github.io/parket/",
+        gitSource: "https://github.com/Jalgaram/parket",
         document: "https://jalgaram.github.io/parket/Parket.pdf",
         pageImg: "jalgaram.github.io_parket_.png",
         language: ["react","reactBootstrap","redux","axios","javascript","nodejs","scss","swiper"],

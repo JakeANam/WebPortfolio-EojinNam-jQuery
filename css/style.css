@@ -260,6 +260,8 @@ ul.headerSub li a {
   padding-left: 30px;
   width: calc(100% - 30px);
   display: flex;
+  position: fixed;
+  z-index: 2;
   justify-content: space-between;
   color: navy;
 }
@@ -352,6 +354,8 @@ ul.headerSub li a {
   padding-left: 30px;
   width: calc(100% - 30px);
   display: flex;
+  position: fixed;
+  z-index: 2;
   justify-content: space-between;
   color: navy;
 }
@@ -374,6 +378,8 @@ ul.headerSub li a {
 #about .popExperience > div,
 #about .popBackend > div {
   padding: 30px;
+  position: relative;
+  top: 50px;
 }
 #about .popExperience > div > ul,
 #about .popBackend > div > ul {
@@ -391,9 +397,7 @@ ul.headerSub li a {
 #about .popExperience > div > ul > li p,
 #about .popBackend > div > ul > li p {
   font-size: 1.2em;
-  height: 30px;
   display: flex;
-  align-items: center;
 }
 #about .popExperience > div > ul > li p span,
 #about .popBackend > div > ul > li p span {
@@ -449,6 +453,8 @@ ul.headerSub li a {
   padding-left: 30px;
   width: calc(100% - 30px);
   display: flex;
+  position: fixed;
+  z-index: 2;
   justify-content: space-between;
   color: navy;
 }
@@ -595,7 +601,7 @@ ul.headerSub li a {
 #works .swiper-slide .webInfo a {
   background-color: #000080;
   color: #ffffff;
-  width: 49%;
+  width: 32.6666666667%;
   margin: 10px 0;
   padding: 5px 0;
   display: inline-block;
@@ -752,6 +758,12 @@ ul.headerSub li a {
   #about .profile {
     height: 20vh;
   }
+  #about .popExperience p,
+  #about .popBackend p {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
   #selectLanguage {
     justify-content: flex-start;
   }
@@ -793,6 +805,12 @@ ul.headerSub li a {
   #about .mainImg,
   #about .profile {
     height: 40vh;
+  }
+  #about .popExperience p,
+  #about .popBackend p {
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
   }
   #selectLanguage {
     justify-content: space-evenly;

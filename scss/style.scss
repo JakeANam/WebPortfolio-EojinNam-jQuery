@@ -42,6 +42,8 @@ $blue4: #87ceeb;
             padding-left: 30px;
             width: calc(100% - 30px);
             display: flex;
+            position:fixed;
+            z-index: 2;
             justify-content: space-between;
             color: navy;
 
@@ -412,6 +414,8 @@ ul.headerSub {
 
         &>div {
             padding: 30px;
+            position: relative;
+            top: 50px;
 
             // .popBackend 외부 ul
             &>ul {
@@ -427,9 +431,7 @@ ul.headerSub {
 
                     p {
                         font-size: 1.2em;
-                        height: 30px;
                         display: flex;
-                        align-items: center;
 
                         span {
                             display: flex;
@@ -478,6 +480,7 @@ ul.headerSub {
 
     .popSkills {
         @include popupFormat();
+
         ul {
             width: 100%;
             height: calc(100% - 50px);
@@ -617,7 +620,7 @@ ul.headerSub {
             a {
                 background-color: $blue3;
                 color: $whitePerfect;
-                width: 49%;
+                width: calc(98% / 3);
                 margin: 10px 0;
                 padding: 5px 0;
                 display: inline-block;
@@ -791,6 +794,15 @@ ul.headerSub {
         .profile {
             height: 20vh;
         }
+
+        .popExperience,
+        .popBackend {
+            p {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+            }
+        }
     }
 
     #selectLanguage {
@@ -819,7 +831,6 @@ ul.headerSub {
 
                 span {
                     font-size: 3em;
-                    
                 }
             } 
         }
@@ -845,6 +856,15 @@ ul.headerSub {
         .mainImg,
         .profile {
             height: 40vh;
+        }
+
+        .popExperience,
+        .popBackend {
+            p {
+                flex-direction: row;
+                align-items: center;
+                height: 30px;
+            }
         }
     }
 

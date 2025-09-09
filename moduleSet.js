@@ -203,8 +203,11 @@ jQuery(document).ready(function(){
         oneWeb += '<a href="' + oneWebInfo.url + '" target="_blank">';
         oneWeb += 'To Webpage';
         oneWeb += '</a>';
+        oneWeb += '<a href="' + oneWebInfo.gitSource + '" target="_blank">';
+        oneWeb += 'To See Source Code';
+        oneWeb += '</a>';
         oneWeb += '<a class="kor" href="' + oneWebInfo.document + '" target="_blank">';
-        oneWeb += 'ToDocument';
+        oneWeb += 'To Document';
         oneWeb += '</a>';
 
         oneWeb += '<p class="explain kor">';

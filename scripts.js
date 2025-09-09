@@ -76,6 +76,11 @@ jQuery(document).ready(function() {
             popup.css({'left':'100%'})
         });
         canScroll = true;
+
+        // if ($(openPop).height() >= $(openPop + ">div").height() + 50) {
+            $("#about>div>div:gt(3)").remove();
+        // }
+        
     });
 
     // 브라우저 화면 크기 변경
@@ -195,10 +200,17 @@ function scrollByHeader(toMovePage) {
 
 // 자기소개 팝업 열기
 function openAboutPop(className) {
-    $('.' + className).show();
+    const openPop = '.' + className;
+    $(openPop).show();
     $('.' + className).animate({opacity:'1',left: '50%'});
     resetElementSize();
     canScroll = false;
+
+    // if ($(openPop).height() < $(openPop + ">div").height() + 50) {
+    if ($(openPop).height() >= $(openPop + ">div").height() + 50) {
+        $(openPop).append($(openPop + ">div").clone());
+       
+    }
 }
 
 // 마우스 휠로 스크롤
@@ -277,7 +289,9 @@ function changeLanguage(lang) {
         'marginLeft':'-200%'
     }, 500, function() {
         $(this).css('marginLeft','0%');
-        canScroll = true;
+        if (!$('#about>div[class ^= pop]').is(':visible')) {
+            canScroll = true;
+        }
     });
     
 }
