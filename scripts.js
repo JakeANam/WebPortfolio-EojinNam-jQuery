@@ -78,7 +78,7 @@ jQuery(document).ready(function() {
         canScroll = true;
 
         // if ($(openPop).height() >= $(openPop + ">div").height() + 50) {
-            $("#about>div>div:gt(3)").remove();
+        //    $("#about>div>div:gt(3)").remove();
         // }
         
     });
